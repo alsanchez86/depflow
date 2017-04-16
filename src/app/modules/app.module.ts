@@ -1,12 +1,15 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routing } from "./app.routing";
 
-import { AppComponent } from './app.component';
-import { PruebaComponent } from './components/prueba.component';
-import { routing } from "./app.routing";
+// Components
+import { AppComponent } from '../components/app/app.component';
+import { PruebaComponent } from '../components/prueba/prueba.component';
 
+// Meta Decorator
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +19,15 @@ import { routing } from "./app.routing";
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+// Class
+export class AppModule {
+  constructor (){
+    console.log("Bootstrapping App!");
+  }
+}
