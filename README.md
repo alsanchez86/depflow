@@ -2,10 +2,6 @@
 
 Generating files to upload to the FTP server.
 
-## Bootstrap 4 && Angular 2 Components
-
-http://valor-software.com/ngx-bootstrap/index-bs4.html#/
-
 ## Angular 2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
