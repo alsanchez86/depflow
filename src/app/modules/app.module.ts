@@ -5,9 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routing } from "./app.routing";
 
-// Components
+// App Components
 import { AppComponent } from '../components/app/app.component';
 import { PruebaComponent } from '../components/prueba/prueba.component';
+
+// Bootstrap Components
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Meta Decorator
 @NgModule({
@@ -19,7 +22,8 @@ import { PruebaComponent } from '../components/prueba/prueba.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
