@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+    You can add global styles to this file, and also import other style files
+    http://www.codeply.com/render/KrUO8QpyXP#features
+    https://github.com/start-angular/SB-Admin-BS4-Angular-4
+*/
 
 // Variables
 @import "variables";
@@ -8,5 +12,5 @@
 @import "bootstrap_variables";
 @import "bootstrap_components";
 
-/* THEME from http://www.codeply.com/render/KrUO8QpyXP#features */
-/* https://github.com/start-angular/SB-Admin-BS4-Angular-4 */
+// Others
+@import "spinner";
