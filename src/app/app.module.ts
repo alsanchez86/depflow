@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 // Layouts
-import { HeaderComponent, SidebarComponent } from './layout';
+import { HeaderComponent, SidebarComponent } from './layouts';
 
 // Pages
 import { NotFoundComponent, HomeComponent } from './pages';
