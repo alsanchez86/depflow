@@ -2,6 +2,12 @@
 
 Generating files to upload to the FTP server.
 
+App Structure: pages > layouts > components.
+
+- Pages are made by Layouts.
+- Layouts are made by Components.
+- Components are functionally independent (JS and SCSS).
+
 ## CLI Commands
 
 ### Launch development server

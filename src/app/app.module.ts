@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent, SidebarComponent } from './layout';
 
 // Pages
-import { NotFoundComponent } from './pages';
+import { NotFoundComponent, HomeComponent } from './pages';
 
 // Meta Decorator
 @NgModule({
@@ -24,7 +24,8 @@ import { NotFoundComponent } from './pages';
     HeaderComponent,
     SidebarComponent,
 
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
