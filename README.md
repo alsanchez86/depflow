@@ -2,6 +2,16 @@
 
 Generating files to upload to the FTP server.
 
+## CLI Commands
+
+### Launch development server
+
+ng serve --host 0.0.0.0 --port 4200
+
+### Compile project
+
+ng build -prod
+
 ## Angular 2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.

@@ -1,4 +1,4 @@
-// Modules
+// Basic imports
 import { Component } from '@angular/core';
 
 // Meta decorator

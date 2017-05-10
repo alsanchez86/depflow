@@ -1,22 +1,30 @@
+// Basic imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Routing
 import { AppRoutingModule } from './app.routing.module';
+
+// Components
 import { AppComponent } from './app.component';
-import { PruebaComponent } from './prueba/prueba.component';
-import { PruebaComponentDos } from './prueba-2/prueba-2.component';
-import { HeaderComponent, SidebarComponent } from './shared';
+
+// Layouts
+import { HeaderComponent, SidebarComponent } from './layout';
+
+// Pages
+import { NotFoundComponent } from './pages';
 
 // Meta Decorator
 @NgModule({
   declarations: [
     AppComponent,
-    PruebaComponent,
-    PruebaComponentDos,
+    
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
