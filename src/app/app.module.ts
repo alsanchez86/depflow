@@ -10,20 +10,21 @@ import { AppRoutingModule } from './app.routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { 
-  NgbdButtonsRadio 
+import {
+  Alert,
+  ButtonsRadio
 } from './components';
 
 // Layouts
-import { 
-  HeaderComponent, 
-  SidebarComponent 
+import {
+  HeaderComponent,
+  SidebarComponent
 } from './layouts';
 
 // Pages
-import { 
-  NotFoundComponent, 
-  HomeComponent 
+import {
+  NotFoundComponent,
+  HomeComponent
 } from './pages';
 
 // Meta Decorator
@@ -33,18 +34,20 @@ import {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,
-    NgbdButtonsRadio,
-    
+
+    Alert,
+    ButtonsRadio,
+
     HeaderComponent,
     SidebarComponent,
 
     NotFoundComponent,
     HomeComponent
-  ],  
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

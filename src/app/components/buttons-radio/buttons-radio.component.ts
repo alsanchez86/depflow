@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngbd-buttons-radio',
+  selector: 'buttons-radio',
   templateUrl: './buttons-radio.component.html',
   styleUrls: ['./buttons-radio.component.scss']
 })
 
-export class NgbdButtonsRadio {
+export class ButtonsRadio {
   model = 1;
 }
