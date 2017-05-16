@@ -1,8 +1,10 @@
 // Basic imports
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
+
+declare var jQuery:any;
 
 // Meta decorator
 @Component({
@@ -12,8 +14,16 @@ import * as _ from 'underscore';
 })
 
 // class
-export class AppComponent { 
-  constructor(){
-    _.each({one: 1, two: 2, three: 3}, alert);
+export class AppComponent {
+  constructor(
+    private el: ElementRef    
+  ){
+    // _.each({one: 1, two: 2, three: 3}, alert);    
+  }
+
+  ngAfterViewInit() {
+    // init local foundation
+    // jQuery(this.el.nativeElement.localName).foundation();
+    jQuery("body").css({"background-color": "red"});
   }
 }
