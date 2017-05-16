@@ -1,6 +1,9 @@
 // Basic imports
 import { Component } from '@angular/core';
 
+// Extra imports
+import * as _ from 'underscore';
+
 // Meta decorator
 @Component({
   selector: 'app-root',
@@ -9,4 +12,8 @@ import { Component } from '@angular/core';
 })
 
 // class
-export class AppComponent { }
+export class AppComponent { 
+  constructor(){
+    _.each({one: 1, two: 2, three: 3}, alert);
+  }
+}

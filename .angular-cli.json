@@ -21,8 +21,10 @@
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.css",
         "styles/_main.scss"
+      ],      
+      "scripts": [
+        "../node_modules/underscore/underscore.js"
       ],
-      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
