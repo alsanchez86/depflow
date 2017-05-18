@@ -1,0 +1,22 @@
+@mixin link (
+    $color: 					        $a-color,
+    $color-hover: 				    $a-color-hover,
+    $text-decoration:			    $a-text-decoration,
+    $text-decoration-hover: 	$a-text-decoration-hover,
+    $background-color: 			  $a-background-color,
+    $background-color-hover: 	$a-background-color-hover
+  ){
+
+	color: $color;
+	text-decoration: $text-decoration;
+	background-color: $background-color;
+
+	&:hover,
+  &:focus,
+  &.active,
+  &:active {
+		color: $color-hover;
+		text-decoration: $text-decoration-hover;
+		background-color: $background-color-hover;
+  }
+}

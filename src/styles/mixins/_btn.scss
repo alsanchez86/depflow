@@ -1,0 +1,23 @@
+@mixin btn (
+    $color:                   $button-color,
+    $color-hover:             $button-color-hover,
+    $background-color:        $button-background-color,
+    $background-color-hover:  $button-background-color-hover
+  ){
+
+  color:              $color;
+  background-color:   $background-color;
+
+  &:hover,
+  &:focus,
+  &.active,
+  &:active {
+    color:            $color-hover;
+    background-color: $background-color-hover;
+  }
+
+  &::before,
+  &::after {
+    border-color: $color;
+  }
+}

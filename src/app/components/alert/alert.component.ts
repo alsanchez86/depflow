@@ -1,4 +1,8 @@
+// Basic imports
 import { Component } from '@angular/core';
+
+// Extra imports
+import * as _ from 'underscore';
 
 @Component({
   selector: 'alert',
@@ -13,6 +17,8 @@ export class Alert {
   constructor(){
     this.visible = true;
     this.text = "Mensaje de alerta por defecto";
+
+    _.each({one: 1, two: 2, three: 3}, console.log);
   }
 
   public closeAlert (){

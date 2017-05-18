@@ -18,12 +18,12 @@ export class AppComponent {
   constructor(
     private el: ElementRef    
   ){
-    // _.each({one: 1, two: 2, three: 3}, alert);    
+    _.each({one: 1, two: 2, three: 3}, console.log);
   }
 
   ngAfterViewInit() {
     // init local foundation
     // jQuery(this.el.nativeElement.localName).foundation();
-    jQuery("body").css({"background-color": "red"});
+    // jQuery("body").css({"background-color": "red"});
   }
 }
