@@ -10,12 +10,10 @@
     https://ng-bootstrap.github.io/#/home
 */
 
-// Variables
-@import "variables";
-@import "mixins";
+// Basics
+@import "basics";
 
-// Bootstrap 4 components, from @import '../../node_modules/bootstrap/scss/bootstrap';
-@import "bootstrap_variables";
+// Bootstrap
 @import "bootstrap_components";
 @import "bootstrap_customize";
 

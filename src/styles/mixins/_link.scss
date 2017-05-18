@@ -1,10 +1,10 @@
 @mixin link (
-    $color: 					        $a-color,
-    $color-hover: 				    $a-color-hover,
-    $text-decoration:			    $a-text-decoration,
-    $text-decoration-hover: 	$a-text-decoration-hover,
-    $background-color: 			  $a-background-color,
-    $background-color-hover: 	$a-background-color-hover
+    $color: 					        $link-color,
+    $color-hover: 				    $link-hover-color,
+    $text-decoration:			    $link-decoration,
+    $text-decoration-hover: 	$link-decoration,
+    $background-color: 			  transparent,
+    $background-color-hover: 	transparent
   ){
 
 	color: $color;

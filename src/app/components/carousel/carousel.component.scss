@@ -1,0 +1,10 @@
+@import "../../../styles/basics";
+
+:host /deep/ img {
+    @include img-responsive;
+}
+
+:host /deep/ a.carousel-control-prev,
+:host /deep/ a.carousel-control-next {
+        
+}

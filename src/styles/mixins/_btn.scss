@@ -1,8 +1,8 @@
 @mixin btn (
-    $color:                   $button-color,
-    $color-hover:             $button-color-hover,
-    $background-color:        $button-background-color,
-    $background-color-hover:  $button-background-color-hover
+    $color:                   $btn-primary-color,
+    $color-hover:             $btn-primary-color,
+    $background-color:        $btn-primary-bg,
+    $background-color-hover:  $btn-primary-bg
   ){
 
   color:              $color;

@@ -1,5 +1,5 @@
 // Basic imports
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -11,17 +11,22 @@ import * as _ from 'underscore';
 })
 
 export class Alert {
-  public visible: boolean;
-  public text: string;
+  @Input() text: string;
+  @Input() visible: boolean;
+  @Input() type: string;
 
-  constructor(){
-    this.visible = true;
-    this.text = "Mensaje de alerta por defecto";
-
-    _.each({one: 1, two: 2, three: 3}, console.log);
+  constructor(){       
+    
   }
 
   public closeAlert (){
     this.visible = false;
+  }
+
+  ngOnInit(){  
+    if (! this.visible) this.visible = false;
+    if (! this.type)    this.type = "info";
+
+    _.each({one: 1, two: 2, three: 3}, console.log);
   }
 }

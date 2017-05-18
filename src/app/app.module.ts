@@ -10,9 +10,11 @@ import { AppRoutingModule } from './app.routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import {
+import {  
   Alert,
-  ButtonsRadio
+  Accordion,
+  ButtonsRadio,
+  Carousel
 } from './components';
 
 // Layouts
@@ -37,14 +39,20 @@ import {
     NgbModule.forRoot()
   ],
   declarations: [
+    // main
     AppComponent,
 
+    // components
     Alert,
+    Accordion,
     ButtonsRadio,
+    Carousel,
 
+    // layouts
     HeaderComponent,
     SidebarComponent,
 
+    // pages
     NotFoundComponent,
     HomeComponent
   ],

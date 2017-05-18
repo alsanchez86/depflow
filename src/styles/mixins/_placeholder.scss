@@ -1,5 +1,5 @@
 @mixin placeholder (
-  $color: $error-color
+  $color: $red
 ){
   &::-moz-placeholder {
     color: $color;
