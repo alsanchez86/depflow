@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-header',
+    selector: 'header-layout',
     templateUrl: './header.layout.html',
     styleUrls: ['./header.layout.scss']
 })
 
-export class HeaderComponent {
+export class HeaderLayout {
     constructor() { 
 
     }

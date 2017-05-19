@@ -5,12 +5,12 @@ import { Component, Input } from '@angular/core';
 import * as _ from 'underscore';
 
 @Component({
-  selector: 'alert',
+  selector: 'alert-component',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
 
-export class Alert {
+export class AlertComponent {
   @Input() text: string;
   @Input() visible: boolean;
   @Input() type: string;

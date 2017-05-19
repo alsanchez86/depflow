@@ -2,14 +2,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 
-// Components
-import { NotFoundComponent, HomeComponent } from "./pages";
+// Pages
+import { 
+  NotFoundPage, 
+  HomePage 
+} from "./pages";
 
 // Routes constants
 const routes: Routes = [
   {path: '',          pathMatch: 'full', redirectTo: 'home'},
-  {path: 'not-found', component: NotFoundComponent},
-  {path: 'home',      component: HomeComponent},
+  {path: 'not-found', component: NotFoundPage},
+  {path: 'home',      component: HomePage},
   {path: '**',        redirectTo: 'not-found'}
 ];
 

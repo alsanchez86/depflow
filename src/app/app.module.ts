@@ -11,22 +11,22 @@ import { AppRoutingModule } from './app.routing.module';
 // Components
 import { AppComponent } from './app.component';
 import {  
-  Alert,
-  Accordion,
-  ButtonsRadio,
-  Carousel
+  AlertComponent,
+  AccordionComponent,
+  ButtonsRadioComponent,
+  CarouselComponent
 } from './components';
 
 // Layouts
 import {
-  HeaderComponent,
-  SidebarComponent
+  HeaderLayout,
+  SidebarLayout
 } from './layouts';
 
 // Pages
 import {
-  NotFoundComponent,
-  HomeComponent
+  NotFoundPage,
+  HomePage
 } from './pages';
 
 // Meta Decorator
@@ -43,18 +43,18 @@ import {
     AppComponent,
 
     // components
-    Alert,
-    Accordion,
-    ButtonsRadio,
-    Carousel,
+    AlertComponent,
+    AccordionComponent,
+    ButtonsRadioComponent,
+    CarouselComponent,
 
     // layouts
-    HeaderComponent,
-    SidebarComponent,
+    HeaderLayout,
+    SidebarLayout,
 
     // pages
-    NotFoundComponent,
-    HomeComponent
+    NotFoundPage,
+    HomePage
   ],
   providers: [],
   bootstrap: [AppComponent]
