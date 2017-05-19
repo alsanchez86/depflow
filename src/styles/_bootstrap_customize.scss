@@ -4,5 +4,8 @@
 
 // buttons cursor pointer by default
 .btn {
-    cursor: pointer;
+    @include text ($noto, 12px, 700, normal, $white, center, uppercase, 100%);
+    padding: 0.6rem 1rem;
+
+    cursor: pointer;    
 }
