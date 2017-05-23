@@ -10,10 +10,10 @@ import {
 
 // Routes constants
 const routes: Routes = [
-  {path: '',          pathMatch: 'full', redirectTo: 'home'},
-  {path: 'not-found', component: NotFoundPage},
-  {path: 'home',      component: HomePage},
-  {path: '**',        redirectTo: 'not-found'}
+  { path: '',          pathMatch: 'full', redirectTo: 'home' },
+  { path: 'not-found', component: NotFoundPage },
+  { path: 'home',      component: HomePage },
+  { path: '**',        redirectTo: 'not-found' }
 ];
 
 @NgModule({
