@@ -20,6 +20,7 @@ import {
 // Layouts
 import {
   HeaderLayout,
+  FooterLayout,
   SidebarLayout
 } from './layouts';
 
@@ -50,6 +51,7 @@ import {
 
     // layouts
     HeaderLayout,
+    FooterLayout,
     SidebarLayout,
 
     // pages
