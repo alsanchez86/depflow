@@ -92,23 +92,23 @@
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
-// $white:  #fff !default;
-// $black:  #000 !default;
-// $red:    #d9534f !default;
-// $orange: #f0ad4e !default;
-// $yellow: #ffd500 !default;
-// $green:  #5cb85c !default;
-// $blue:   #0275d8 !default;
-// $teal:   #5bc0de !default;
-// $pink:   #ff5b77 !default;
-// $purple: #613d7c !default;
+$white:  #fff !default;
+$black:  #000 !default;
+$red:    #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ffd500 !default;
+$green:  #5cb85c !default;
+$blue:   #0275d8 !default;
+$teal:   #5bc0de !default;
+$pink:   #ff5b77 !default;
+$purple: #613d7c !default;
 
 // Create grayscale
-// $gray-dark:                 #292b2c !default;
-// $gray:                      #464a4c !default;
-// $gray-light:                #636c72 !default;
-// $gray-lighter:              #eceeef !default;
-// $gray-lightest:             #f7f7f9 !default;
+$gray-dark:    #303030 !default;
+$gray:         #424242 !default;
+$gray-light:   #E0E0E0 !default;
+$gray-lighter: #F5F5F5 !default;
+$gray-lightest:#FAFAFA !default;
 
 // Reassign color vars to semantic color scheme
 $brand-primary:             $blue !default;
@@ -182,7 +182,7 @@ $sizes: (
 // Settings for the `<body>` element.
 
 $body-bg:       $white !default;
-// $body-color:    $gray-dark !default;
+$body-color:    $primary-text-color !default;
 $inverse-bg:    $gray-dark !default;
 $inverse-color: $gray-lighter !default;
 
@@ -191,7 +191,7 @@ $inverse-color: $gray-lighter !default;
 //
 // Style anchor elements.
 
-// $link-color:            $brand-primary !default;
+$link-color:            $primary-color !default;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
@@ -244,10 +244,10 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-// $font-family-base:       $font-family-sans-serif !default;
+$font-family-sans-serif:  -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:        $roboto !default;
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem !default;
@@ -318,9 +318,9 @@ $list-inline-padding: 5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-// $border-radius:          .25rem !default;
-// $border-radius-lg:       .3rem !default;
-// $border-radius-sm:       .2rem !default;
+$border-radius:           .15rem !default;
+$border-radius-lg:        .2rem !default;
+$border-radius-sm:        .2rem !default;
 
 $component-active-color: $white !default;
 $component-active-bg:    $brand-primary !default;
@@ -367,9 +367,9 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba(
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
 
-$btn-primary-color:              $white !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-color:              $primary-color-text !default;
+$btn-primary-bg:                 $accent-color !default;
+$btn-primary-border:             $accent-color !default;
 
 $btn-secondary-color:            $gray-dark !default;
 $btn-secondary-bg:               $white !default;
