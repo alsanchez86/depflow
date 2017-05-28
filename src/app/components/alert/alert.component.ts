@@ -15,18 +15,18 @@ export class AlertComponent {
   @Input() visible: boolean;
   @Input() type: string;
 
-  constructor(){       
-    
+  constructor(){
+
   }
 
-  public closeAlert (){
-    this.visible = false;
-  }
-
-  ngOnInit(){  
+  ngOnInit(){
     if (! this.visible) this.visible = false;
     if (! this.type)    this.type = "info";
 
     _.each({one: 1, two: 2, three: 3}, console.log);
+  }
+
+  public closeAlert (){
+    this.visible = false;
   }
 }

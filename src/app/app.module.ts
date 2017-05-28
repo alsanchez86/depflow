@@ -10,11 +10,12 @@ import { AppRoutingModule } from './app.routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import {  
+import {
   AlertComponent,
   AccordionComponent,
   ButtonsRadioComponent,
-  CarouselComponent
+  CarouselComponent,
+  CollapseComponent
 } from './components';
 
 // Layouts
@@ -48,6 +49,7 @@ import {
     AccordionComponent,
     ButtonsRadioComponent,
     CarouselComponent,
+    CollapseComponent,
 
     // layouts
     HeaderLayout,

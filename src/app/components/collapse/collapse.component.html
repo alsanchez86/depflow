@@ -1,0 +1,11 @@
+<button type="button" class="btn btn-primary" (click)="toggle()" [attr.aria-expanded]="!collapsed" aria-controls="id">
+  {{ buttonText }}
+</button>
+
+<div id="id" [ngbCollapse]="collapsed">
+  <div class="card">
+    <div class="card-block">
+      {{ cardText }}
+    </div>
+  </div>
+</div>

@@ -1,14 +1,28 @@
 <header>
+  <div class="container-fluid">
     <header-layout></header-layout>
+  </div>
 </header>
 
-<!-- probando componentes -->
-<alert-component [text]="'probandooooo'" [visible]="true"></alert-component>
-<buttons-radio-component></buttons-radio-component>
-<accordion-component></accordion-component>
-<carousel-component></carousel-component>
-<!-- / probando componentes -->
+<div class="container">
+  <!-- probando componentes -->
+  <alert-component [text]="'texto de prueba'" [visible]="true"></alert-component>
+  <buttons-radio-component></buttons-radio-component>
+  <accordion-component></accordion-component>
+
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <carousel-component></carousel-component>
+    </div>
+  </div>
+
+  <collapse-component [buttonText]="'Toggle'" [cardText]="'Esto es un texto de prueba'"></collapse-component>
+  <collapse-component [buttonText]="'Toggle'" [cardText]="'Esto es un texto de prueba'"></collapse-component>
+  <!-- / probando componentes -->
+</div>
 
 <footer>
+  <div class="container-fluid">
     <footer-layout></footer-layout>
+  </div>
 </footer>
