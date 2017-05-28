@@ -11,4 +11,8 @@ export class RestaurantComponent {
   constructor(){
 
   }
+
+  ngOnInit(){
+    console.log("fffff");
+  }
 }

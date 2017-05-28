@@ -51,7 +51,7 @@ import {
 // Imports for loading & configuring the in-memory web api
 import {
   RestaurantsData
-} from './in-memory/';
+} from './data/';
 
 // Meta Decorator
 @NgModule({

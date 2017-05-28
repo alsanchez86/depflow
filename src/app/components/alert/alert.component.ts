@@ -23,7 +23,7 @@ export class AlertComponent {
     if (! this.visible) this.visible = false;
     if (! this.type)    this.type = "info";
 
-    _.each({one: 1, two: 2, three: 3}, console.log);
+    // _.each({one: 1, two: 2, three: 3}, console.log);
   }
 
   public closeAlert (){

@@ -14,5 +14,5 @@ export class Restaurant {
      phone: string,
      speciality: string
   };
-  fields: nul;
+  fields: null;
 }
