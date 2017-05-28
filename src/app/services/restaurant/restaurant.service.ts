@@ -11,10 +11,12 @@ import { Restaurant } from '../../classes';
 @Injectable()
 
 export class RestaurantService {
-  private headers = new Headers({'Content-Type': 'application/json'});
-  private restaurantsUrl = 'api/restaurants'; // URL to web api
+  private headers         = new Headers({'Content-Type': 'application/json'});
+  private restaurantsUrl  = 'api/restaurants'; // URL to web api
 
-  constructor(private http: Http) {
+  constructor(
+    private http: Http
+  ){
 
   }
 

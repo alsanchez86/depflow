@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
- 
+
 export class RestaurantsData implements InMemoryDbService {
   createDb() {
     let restaurants = [
@@ -39,6 +39,6 @@ export class RestaurantsData implements InMemoryDbService {
          "fields":null
        }
     ];
-    return {restaurants};
+    return { restaurants };
   }
 }

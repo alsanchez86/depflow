@@ -22,13 +22,9 @@ import {
   AccordionComponent,
   ButtonsRadioComponent,
   CarouselComponent,
-  CollapseComponent
-} from './components';
-
-// App Components
-import {
+  CollapseComponent,
   RestaurantComponent
-} from './app-components';
+} from './components';
 
 // Layouts
 import {
@@ -73,6 +69,7 @@ import {
     ButtonsRadioComponent,
     CarouselComponent,
     CollapseComponent,
+    RestaurantComponent,
 
     // layouts
     HeaderLayout,
