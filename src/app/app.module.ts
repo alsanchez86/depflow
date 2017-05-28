@@ -8,8 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 // Routing
 import { AppRoutingModule } from './app.routing.module';
 
+// In Memory
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+// Root Component
+import {
+  AppComponent
+} from './app.component';
+
 // Components
-import { AppComponent } from './app.component';
 import {
   AlertComponent,
   AccordionComponent,
@@ -17,6 +24,11 @@ import {
   CarouselComponent,
   CollapseComponent
 } from './components';
+
+// App Components
+import {
+  RestaurantComponent
+} from './app-components';
 
 // Layouts
 import {
@@ -31,12 +43,23 @@ import {
   HomePage
 } from './pages';
 
+// Services
+import {
+  RestaurantService
+} from './services/';
+
+// Imports for loading & configuring the in-memory web api
+import {
+  RestaurantsData
+} from './in-memory/';
+
 // Meta Decorator
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(RestaurantsData),
     AppRoutingModule,
     NgbModule.forRoot()
   ],
@@ -60,7 +83,9 @@ import {
     NotFoundPage,
     HomePage
   ],
-  providers: [],
+  providers: [
+    RestaurantService
+  ],
   bootstrap: [AppComponent]
 })
 
