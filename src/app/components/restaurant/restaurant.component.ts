@@ -24,6 +24,12 @@ export class RestaurantComponent {
   }
 
   ngOnInit(){
-    this.restaurants = this.restaurantService.getRestaurants();
+    this.getRestaurants();    
+  }
+
+  getRestaurants(): void {    
+    this.restaurantService
+      .getAll()
+      .then(data => this.restaurants = data);
   }
 }
