@@ -1,3 +1,22 @@
-<div *ngFor="let item of restaurants; let i = index;">
-  {{ item._id }}
-</div>
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ngb-panel *ngFor="let item of restaurants; let i = index;" title="{{ item._source.name }}">
+    <ng-template ngbPanelContent>
+      <ul>        
+        <li><strong>item._index:</strong> {{ item._index }}</li>
+        <li><strong>item._type:</strong> {{ item._type }}</li>
+        <li><strong>item._id:</strong> {{ item._id }}</li>
+        <li><strong>item._score:</strong> {{ item._score }}</li>
+        <li><strong>item._source.Id:</strong> {{ item._source.Id }}</li>
+        <li><strong>item._source.avg_rate:</strong> {{ item._source.avg_rate }}</li>
+        <li><strong>item._source.description:</strong> {{ item._source.description }}</li>
+        <li><strong>item._source.freeTables:</strong> {{ item._source.freeTables }}</li>
+        <li><strong>item._source.hour_open:</strong> {{ item._source.hour_open }}</li>
+        <li><strong>item._source.locale:</strong> {{ item._source.locale }}</li>
+        <li><strong>item._source.name:</strong> {{ item._source.name }}</li>
+        <li><strong>item._source.phone:</strong> {{ item._source.phone }}</li>
+        <li><strong>item._source.speciality:</strong> {{ item._source.speciality }}</li>
+        <li><strong>item._source.fields:</strong> {{ item._source.fields }}</li>
+      </ul>          
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
