@@ -4,13 +4,14 @@
 
 // buttons cursor pointer by default
 .btn {
-    @include text ($noto, 12px, 700, normal, $white, center, uppercase, 100%);
+    @include text ($noto, 0.75rem, 400, normal, $white, center, capitalize, 100%);
     padding: 0.6rem 1rem;
     cursor: pointer;
 }
 
+// img fluid center
 .img-fluid-center {
-  @include img-fluid;
-  display: block;
-  margin: auto;
+    @include img-fluid;
+    display: block;
+    margin: auto;
 }

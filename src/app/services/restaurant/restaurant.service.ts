@@ -22,10 +22,10 @@ export class RestaurantService {
 
   getAll(): Promise<Restaurant[]> {  
     return this.http
-                .get(this.restaurantsUrl)
-                .toPromise()
-                .then(response => response.json().data as Restaurant[])
-                .catch(this.handleError);
+      .get(this.restaurantsUrl)
+      .toPromise()
+      .then(response => response.json().data as Restaurant[])
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
