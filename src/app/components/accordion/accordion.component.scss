@@ -1,5 +1,13 @@
 @import "../../../styles/basics";
 
-:host /deep/ a {
-    
+:host /deep/ {
+    .card-header {
+        padding: 0;
+        
+        a {
+            @include link($link-color, $link-hover-color, none, none);
+            display: block;
+            padding: 0.75rem 1.25rem;
+        }
+    }    
 }
