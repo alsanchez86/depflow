@@ -29,31 +29,19 @@ export class FilterPipe implements PipeTransform {
         this.field = field;
         this.value = value;
 
-        if (this.items && this.field){
+        if (this.items && this.field && this.value){
             this.nodes = this.field ? this.field.split(".") : [];
-            
-            if (this.value){
-                this.items = _.filter(this.items, (item) => this.traverse(item) === this.value);
-            }else{
-                this.items = _.filter(this.items, (item) => {
-                    let traverse = this.traverse(item);
-
-                    if (traverse && traverse != ""){
-                        return item;
-                    }                   
-                });
-            }                  
-
-            // si no se define el valor, devolver aquellos items cuyo field sea != "" y exista
+            this.items = _.filter(this.items, (item) => this.traverse(item) === this.value);            
         }
 
         return this.items;
     }
 
-    private traverse(item): any{       
+    private traverse(item): any {       
         for (var i = 0; i < this.nodes.length; i++) {
             item = item[this.nodes[i]];
         }
+
         return item;
     }
 }
