@@ -49,6 +49,12 @@ import {
   RestaurantsData
 } from './data/';
 
+// Pipes
+import { 
+  OrderPipe,
+  FilterPipe
+} from './pipes/';
+
 // Meta Decorator
 @NgModule({
   imports: [
@@ -78,7 +84,11 @@ import {
 
     // pages
     NotFoundPage,
-    HomePage
+    HomePage,
+
+    // Pipes
+    OrderPipe,
+    FilterPipe
   ],
   providers: [
     RestaurantService

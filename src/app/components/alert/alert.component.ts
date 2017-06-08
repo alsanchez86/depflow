@@ -26,7 +26,7 @@ export class AlertComponent {
     // _.each({one: 1, two: 2, three: 3}, console.log);
   }
 
-  public closeAlert (){
+  public closeAlert (): void{
     this.visible = false;
   }
 }

@@ -1,9 +1,5 @@
-<!--
-  https://webcake.co/object-properties-in-angular-2s-ngfor/
--->
-
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-  <ngb-panel *ngFor="let item of restaurants; let i = index;" title="{{ item._source.name }}">
+  <ngb-panel *ngFor="let item of restaurants | order:'_source.name':'DESC' | filter:'_source.name':'Alvacío Gastronomía'; let i = index;" title="{{ item._source.name }}">
     <ng-template ngbPanelContent>
       <ul>        
         <li><strong>item._index:</strong> {{ item._index }}</li>
@@ -24,3 +20,7 @@
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
+
+<!--
+  https://webcake.co/object-properties-in-angular-2s-ngfor/
+-->
