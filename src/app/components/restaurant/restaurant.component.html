@@ -3,32 +3,22 @@
 <div class="row">
   <div class="col col-xs-6">    
     <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
-      <label class="btn btn-primary">
-        <input type="radio" [value]="1">
-        <span>1 mesa</span>    
-      </label>
-
-      <label class="btn btn-primary">
-        <input type="radio" [value]="2">
-        <span>2 mesas</span>    
-      </label>
-
-      <label class="btn btn-primary">
-        <input type="radio" [value]="3">
-        <span>3 mesas</span>
+      <label *ngFor="let item of filters" class="btn btn-primary">
+        <input type="radio" [value]="item.value">
+        <span>{{ item.text }}</span>    
       </label>
     </div>
   </div>
 
   <div class="col col-xs-6">
-    <select class="custom-select">
+    <select [ngModel]="order" (change)="setOrder($event)" class="custom-select">
       <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.value }}</option>      
     </select>
   </div>
 </div>
 
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let item of restaurants | order:'_source.name':'DESC' | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
+  <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
     <ng-template ngbPanelContent>
       <ul>        
         <li><strong>item._index:</strong> {{ item._index }}</li>
