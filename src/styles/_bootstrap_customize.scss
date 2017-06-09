@@ -4,8 +4,17 @@
 
 // buttons cursor pointer by default
 .btn {
-    @include text ($noto, 0.75rem, 400, normal, $white, center, capitalize, 100%);
+    @include text ($noto, 0.75rem, 400, normal, $primary-color-text, center, capitalize, 100%);
     padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+// select
+.custom-select {
+    @include text ($noto, 0.75rem, 400, normal, $primary-text-color, center, capitalize, 100%);
+    height: auto;
+    margin-bottom: .5rem;    
+    padding: 0.6rem 1.75rem 0.6rem 0.75rem;
     cursor: pointer;
 }
 
