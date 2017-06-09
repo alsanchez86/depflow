@@ -1,49 +1,49 @@
-<h3>Filters: mesas libres</h3>
+<div id="{{ id }}" class="{{ id }}">
+  <h3>Filters: mesas libres</h3>
 
-<div class="row">
-  <div class="col col-xs-6">
-    <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
-      <label *ngFor="let item of filters" class="btn btn-primary">
-        <input type="radio" [value]="item.value">
-        <span>{{ item.text }}</span>
-      </label>
+  <div class="row">
+    <div class="col col-xs-6">
+      <switch-component></switch-component>
+
+      <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
+        <label *ngFor="let item of filters" class="btn btn-primary">
+          <input type="radio" [value]="item.value">
+          <span>{{ item.text }}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="col col-xs-6">
+      <div class="form-group">
+        <label for="{{ id }}">Ordenar:</label>
+
+        <select class="form-control" id="{{ id }}" [ngModel]="order" (change)="setOrder($event)">
+          <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <div class="col col-xs-6">
-    <div class="form-group">
-      <label for="{{ id }}">Ordenar:</label>
-
-      <select class="form-control" id="{{ id }}" [ngModel]="order" (change)="setOrder($event)">
-        <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
-      </select>
-    </div>
-  </div>
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
+      <ng-template ngbPanelContent>
+        <ul>
+          <li><strong>item._index:</strong> {{ item._index }}</li>
+          <li><strong>item._type:</strong> {{ item._type }}</li>
+          <li><strong>item._id:</strong> {{ item._id }}</li>
+          <li><strong>item._score:</strong> {{ item._score }}</li>
+          <li><strong>item._source.Id:</strong> {{ item._source.Id }}</li>
+          <li><strong>item._source.avg_rate:</strong> {{ item._source.avg_rate }}</li>
+          <li><strong>item._source.description:</strong> {{ item._source.description }}</li>
+          <li><strong>item._source.freeTables:</strong> {{ item._source.freeTables }}</li>
+          <li><strong>item._source.hour_open:</strong> {{ item._source.hour_open }}</li>
+          <li><strong>item._source.locale:</strong> {{ item._source.locale }}</li>
+          <li><strong>item._source.name:</strong> {{ item._source.name }}</li>
+          <li><strong>item._source.phone:</strong> {{ item._source.phone }}</li>
+          <li><strong>item._source.speciality:</strong> {{ item._source.speciality }}</li>
+          <li><strong>item._source.fields:</strong> {{ item._source.fields }}</li>
+        </ul>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
-
-<ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
-    <ng-template ngbPanelContent>
-      <ul>
-        <li><strong>item._index:</strong> {{ item._index }}</li>
-        <li><strong>item._type:</strong> {{ item._type }}</li>
-        <li><strong>item._id:</strong> {{ item._id }}</li>
-        <li><strong>item._score:</strong> {{ item._score }}</li>
-        <li><strong>item._source.Id:</strong> {{ item._source.Id }}</li>
-        <li><strong>item._source.avg_rate:</strong> {{ item._source.avg_rate }}</li>
-        <li><strong>item._source.description:</strong> {{ item._source.description }}</li>
-        <li><strong>item._source.freeTables:</strong> {{ item._source.freeTables }}</li>
-        <li><strong>item._source.hour_open:</strong> {{ item._source.hour_open }}</li>
-        <li><strong>item._source.locale:</strong> {{ item._source.locale }}</li>
-        <li><strong>item._source.name:</strong> {{ item._source.name }}</li>
-        <li><strong>item._source.phone:</strong> {{ item._source.phone }}</li>
-        <li><strong>item._source.speciality:</strong> {{ item._source.speciality }}</li>
-        <li><strong>item._source.fields:</strong> {{ item._source.fields }}</li>
-      </ul>
-    </ng-template>
-  </ngb-panel>
-</ngb-accordion>
-
-<!--
-  https://webcake.co/object-properties-in-angular-2s-ngfor/
--->

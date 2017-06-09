@@ -1,5 +1,5 @@
-<ngb-alert [dismissible]="true" [type]="type" (close)="closeAlert()" *ngIf="visible">
-  {{ text }}
-  <br>
-  {{ id }}
-</ngb-alert>
+<div id="{{ id }}" class="{{ id }}">
+  <ngb-alert [dismissible]="true" [type]="type" (close)="closeAlert()" *ngIf="visible">
+    {{ text }}
+  </ngb-alert>
+</div>

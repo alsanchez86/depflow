@@ -23,6 +23,7 @@ import {
   ButtonsRadioComponent,
   CarouselComponent,
   CollapseComponent,
+  SwitchComponent,
   RestaurantComponent
 } from './components';
 
@@ -50,7 +51,7 @@ import {
 } from './data/';
 
 // Pipes
-import { 
+import {
   OrderPipe,
   FilterPipe
 } from './pipes/';
@@ -75,6 +76,7 @@ import {
     ButtonsRadioComponent,
     CarouselComponent,
     CollapseComponent,
+    SwitchComponent,
     RestaurantComponent,
 
     // layouts

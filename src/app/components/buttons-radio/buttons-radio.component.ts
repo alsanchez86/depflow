@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+// Basics
+import { Component, ElementRef } from '@angular/core';
+
+// nexter
+let next = 0;
 
 @Component({
   selector: 'buttons-radio-component',
@@ -7,5 +11,16 @@ import { Component } from '@angular/core';
 })
 
 export class ButtonsRadioComponent {
-  model = 1;
+  public id: string;
+
+  constructor(
+    private elem: ElementRef
+  ){
+    // id
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+  }
+
+  ngOnInit(){
+
+  }
 }

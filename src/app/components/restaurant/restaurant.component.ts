@@ -1,5 +1,5 @@
 // Basics
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 // Classes
 import { Restaurant } from '../../classes';
@@ -28,15 +28,14 @@ export class RestaurantComponent {
   public order: any;
 
   constructor(
+    private elem: ElementRef,
     private restaurantService: RestaurantService
   ){
-
+    // id
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
   ngOnInit(){
-    // id
-    this.id = "restaurant-component-" + next++;
-
     // filters
     this.filters = [{
       value: 1,

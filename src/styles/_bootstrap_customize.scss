@@ -39,3 +39,30 @@ label {
     display: block;
     margin: auto;
 }
+
+// btn groups
+.btn-group {
+  .btn {
+      border-right: 1px solid $white;
+      border-left: 1px solid $white;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+  }
+}
+
+// collapse
+.card-header {
+    padding: 0;
+
+    a {
+        @include link($link-color, $link-hover-color, none, none);
+        display: block;
+        padding: 0.75rem 1.25rem;
+    }
+}

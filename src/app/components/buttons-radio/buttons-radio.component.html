@@ -1,13 +1,17 @@
-<div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
-  <label class="btn btn-primary">
-    <input type="radio" [value]="1"> Left (pre-checked)
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" value="middle"> Middle
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" [value]="false"> Right
-  </label>
-</div>
+<div id="{{ id }}" class="{{ id }}">
+  <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
+    <label class="btn btn-primary">
+      <input type="radio" [value]="1"> Left (pre-checked)
+    </label>
 
-<pre>{{model}}</pre>
+    <label class="btn btn-primary">
+      <input type="radio" value="middle"> Middle
+    </label>
+
+    <label class="btn btn-primary">
+      <input type="radio" [value]="false"> Right
+    </label>
+  </div>
+
+  <pre>{{model}}</pre>
+</div>

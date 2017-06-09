@@ -1,7 +1,8 @@
 // Basic imports
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
-var next = 0;
+// nexter
+let next = 0;
 
 @Component({
   selector: 'collapse-component',
@@ -14,10 +15,13 @@ export class CollapseComponent {
   @Input() buttonText: string;
   @Input() cardText: string;
 
-  public id = `collapse-component-${next++}`;
+  public id: string;
 
-  constructor(){
-
+  constructor(
+    private elem: ElementRef
+  ){
+    // id
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
   ngOnInit(){

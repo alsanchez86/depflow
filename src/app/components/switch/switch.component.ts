@@ -5,13 +5,12 @@ import { Component, ElementRef } from '@angular/core';
 let next = 0;
 
 @Component({
-  moduleId: module.id,
-  selector: 'carousel-component',
-  templateUrl: 'carousel.component.html',
-  styleUrls: ['carousel.component.scss']
+  selector: 'switch-component',
+  templateUrl: './switch.component.html',
+  styleUrls: ['./switch.component.scss']
 })
 
-export class CarouselComponent {
+export class SwitchComponent {
   public id: string;
 
   constructor(
@@ -19,5 +18,9 @@ export class CarouselComponent {
   ){
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+  }
+
+  ngOnInit(){
+    this.id = "alert-component-" + next++;
   }
 }

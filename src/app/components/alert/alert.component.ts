@@ -1,5 +1,5 @@
 // Basic imports
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -20,8 +20,11 @@ export class AlertComponent {
 
   public id: string;
 
-  constructor(){
-
+  constructor(
+    private elem: ElementRef
+  ){
+    // id
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
   ngOnInit(){
