@@ -1,14 +1,14 @@
 <div id="{{ id }}" class="{{ id }}">
-  <h3>Filters: mesas libres</h3>
-
   <div class="row">
-    <div class="col col-6">
+    <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+      <h5>Filtros: mesas libres</h5>
+
       <div class="row">
-        <div class="col col-3">
+        <div class="col col-3 col-sm-4 col-md-3 col-lg-3">
           <switch-component></switch-component>
         </div>
 
-        <div class="col col-9">
+        <div class="col col-9 col-sm-8 col-md-9 col-lg-9">
           <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
             <label *ngFor="let item of filters" class="btn btn-primary">
               <input type="radio" [value]="item.value">
@@ -19,7 +19,9 @@
       </div>
     </div>
 
-    <div class="col col-6">
+    <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+      <h5>Orden</h5>
+
       <div class="form-group">
         <select class="form-control" [ngModel]="order" (change)="setOrder($event)">
           <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
