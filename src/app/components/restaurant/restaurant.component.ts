@@ -14,8 +14,9 @@ import { RestaurantService } from '../../services';
 })
 
 export class RestaurantComponent {
-  restaurants: Restaurant[]; // array of restaurants
-  selectedRestaurant: Restaurant; // object restaurant
+  public restaurants: Restaurant[]; // array of restaurants
+  // public selectedRestaurant: Restaurant; // object restaurant
+  public options: object[];
 
   constructor(
     private restaurantService: RestaurantService
@@ -25,6 +26,14 @@ export class RestaurantComponent {
 
   ngOnInit(){
     this.getRestaurants();    
+    this.options = [{
+      value: "DESC",
+      active: true
+    },
+    {          
+      value: "ASC",
+      active: false
+    }];
   }
 
   getRestaurants(): void {    

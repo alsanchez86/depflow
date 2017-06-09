@@ -9,7 +9,7 @@
       </label>
 
       <label class="btn btn-primary">
-        <input type="radio" value="2">
+        <input type="radio" [value]="2">
         <span>2 mesas</span>    
       </label>
 
@@ -22,8 +22,7 @@
 
   <div class="col col-xs-6">
     <select class="custom-select">
-      <option value="ASC">ASC</option>
-      <option value="DESC">DESC</option>
+      <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.value }}</option>      
     </select>
   </div>
 </div>
