@@ -19,8 +19,4 @@ export class SwitchComponent {
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
-
-  ngOnInit(){
-    this.id = "alert-component-" + next++;
-  }
 }

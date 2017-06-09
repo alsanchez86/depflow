@@ -27,9 +27,7 @@ export class AlertComponent {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
-  ngOnInit(){
-    this.id = "alert-component-" + next++;
-
+  ngOnInit(){    
     if (! this.visible) this.visible = false;
     if (! this.type)    this.type = "info";
 

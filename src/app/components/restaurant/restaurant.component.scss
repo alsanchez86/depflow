@@ -1,5 +1,7 @@
 @import "../../../styles/basics";
 
 :host /deep/ {
-
+  h3 {
+    margin-bottom: 1.5rem;
+  }
 }
