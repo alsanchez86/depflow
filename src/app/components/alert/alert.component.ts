@@ -4,6 +4,9 @@ import { Component, Input } from '@angular/core';
 // Extra imports
 import * as _ from 'underscore';
 
+// nexter
+let next = 0;
+
 @Component({
   selector: 'alert-component',
   templateUrl: './alert.component.html',
@@ -15,11 +18,15 @@ export class AlertComponent {
   @Input() visible: boolean;
   @Input() type: string;
 
+  public id: string;
+
   constructor(){
 
   }
 
   ngOnInit(){
+    this.id = "alert-component-" + next++;
+
     if (! this.visible) this.visible = false;
     if (! this.type)    this.type = "info";
 

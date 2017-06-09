@@ -10,6 +10,9 @@ import { RestaurantService } from '../../services';
 // Extra imports
 import * as _ from 'underscore';
 
+// nexter
+let next = 0;
+
 @Component({
   selector: 'restaurant-component',
   templateUrl: './restaurant.component.html',
@@ -18,9 +21,10 @@ import * as _ from 'underscore';
 
 export class RestaurantComponent {
   // public selectedRestaurant: Restaurant; // object restaurant
-  public restaurants: Restaurant[];  
+  public id: string;
+  public restaurants: Restaurant[];
   public filters: object[];
-  public options: object[];  
+  public options: object[];
   public order: any;
 
   constructor(
@@ -29,13 +33,16 @@ export class RestaurantComponent {
 
   }
 
-  ngOnInit(){   
+  ngOnInit(){
+    // id
+    this.id = "restaurant-component-" + next++;
+
     // filters
     this.filters = [{
       value: 1,
       text: "1 Mesa"
     },
-    {          
+    {
       value: 2,
       text: "2 Mesas"
     }];
@@ -43,34 +50,33 @@ export class RestaurantComponent {
     // options
     this.options = [{
       value: "DESC",
+      text: "Descendente",
       active: false
     },
-    {          
+    {
       value: "ASC",
+      text: "Ascendente",
       active: true
     }];
-    
-    // order (active option)    
+
+    // order (active option)
     this.order = _.chain(this.options)
                   .filter(function(option) { return option["active"]; })
-                  .map(function(option){ return option["value"]; })                  
-                  .value();   
-
-    /*
-      Parece ser que como las funciones de underscore tardan un poco en ejecutarse, se renderiza antes el ngFor de restaurantes en la vista y no toma bien el valor del filtro this.order
-    */ 
+                  .map(function(option){ return option["value"]; })
+                  .first()
+                  .value();
 
     // get Restaurants from API
-    this.getRestaurants();    
+    this.getRestaurants();
   }
 
-  getRestaurants(): void {    
+  getRestaurants(): void {
     this.restaurantService
       .getAll()
       .then(data => this.restaurants = data);
   }
 
-  setOrder(event): any {        
+  setOrder(event): any {
     this.order = event.target.value;
   }
 }

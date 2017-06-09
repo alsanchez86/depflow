@@ -1,26 +1,30 @@
 <h3>Filters: mesas libres</h3>
 
 <div class="row">
-  <div class="col col-xs-6">    
+  <div class="col col-xs-6">
     <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
       <label *ngFor="let item of filters" class="btn btn-primary">
         <input type="radio" [value]="item.value">
-        <span>{{ item.text }}</span>    
+        <span>{{ item.text }}</span>
       </label>
     </div>
   </div>
 
   <div class="col col-xs-6">
-    <select [ngModel]="order" (change)="setOrder($event)" class="custom-select">
-      <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.value }}</option>      
-    </select>
+    <div class="form-group">
+      <label for="{{ id }}">Ordenar:</label>
+
+      <select class="form-control" id="{{ id }}" [ngModel]="order" (change)="setOrder($event)">
+        <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
+      </select>
+    </div>
   </div>
 </div>
 
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
     <ng-template ngbPanelContent>
-      <ul>        
+      <ul>
         <li><strong>item._index:</strong> {{ item._index }}</li>
         <li><strong>item._type:</strong> {{ item._type }}</li>
         <li><strong>item._id:</strong> {{ item._id }}</li>
@@ -35,7 +39,7 @@
         <li><strong>item._source.phone:</strong> {{ item._source.phone }}</li>
         <li><strong>item._source.speciality:</strong> {{ item._source.speciality }}</li>
         <li><strong>item._source.fields:</strong> {{ item._source.fields }}</li>
-      </ul>          
+      </ul>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
