@@ -69,13 +69,17 @@ export class RestaurantComponent {
     this.getRestaurants();
   }
 
-  getRestaurants(): void {
+  private getRestaurants(): void {
     this.restaurantService
       .getAll()
       .then(data => this.restaurants = data);
   }
 
-  setOrder(event): any {
+  public setOrder(event): any {
     this.order = event.target.value;
+  }
+
+  public isObject(value: any): boolean {
+    return _.isObject(value);
   }
 }

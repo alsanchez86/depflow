@@ -34,20 +34,21 @@
     <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
       <ng-template ngbPanelContent>
         <ul>
-          <li><strong>item._index:</strong> {{ item._index }}</li>
-          <li><strong>item._type:</strong> {{ item._type }}</li>
-          <li><strong>item._id:</strong> {{ item._id }}</li>
-          <li><strong>item._score:</strong> {{ item._score }}</li>
-          <li><strong>item._source.Id:</strong> {{ item._source.Id }}</li>
-          <li><strong>item._source.avg_rate:</strong> {{ item._source.avg_rate }}</li>
-          <li><strong>item._source.description:</strong> {{ item._source.description }}</li>
-          <li><strong>item._source.freeTables:</strong> {{ item._source.freeTables }}</li>
-          <li><strong>item._source.hour_open:</strong> {{ item._source.hour_open }}</li>
-          <li><strong>item._source.locale:</strong> {{ item._source.locale }}</li>
-          <li><strong>item._source.name:</strong> {{ item._source.name }}</li>
-          <li><strong>item._source.phone:</strong> {{ item._source.phone }}</li>
-          <li><strong>item._source.speciality:</strong> {{ item._source.speciality }}</li>
-          <li><strong>item._source.fields:</strong> {{ item._source.fields }}</li>
+          <li *ngFor="let property of item | keys">
+            <div *ngIf="! isObject(property.value)">
+                <strong>{{ property.key }}:</strong> {{ property.value }}
+            </div>
+
+            <div *ngIf="isObject(property.value)">
+                <strong>{{ property.key }}:</strong>
+
+                <ul>
+                  <li *ngFor="let property of property.value | keys">
+                    <strong>{{ property.key }}:</strong> {{ property.value }}
+                  </li>
+                </ul>
+            </div>
+          </li>
         </ul>
       </ng-template>
     </ngb-panel>

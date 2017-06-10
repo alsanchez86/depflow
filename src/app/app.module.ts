@@ -53,7 +53,8 @@ import {
 // Pipes
 import {
   OrderPipe,
-  FilterPipe
+  FilterPipe,
+  KeysPipe
 } from './pipes/';
 
 // Meta Decorator
@@ -90,7 +91,8 @@ import {
 
     // Pipes
     OrderPipe,
-    FilterPipe
+    FilterPipe,
+    KeysPipe
   ],
   providers: [
     RestaurantService
