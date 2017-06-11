@@ -14,9 +14,6 @@ import * as _ from 'underscore';
 })
 
 export class FilterPipe implements PipeTransform {
-    private items: any[];
-    private field: string;
-    private value: string;
     private nodes: string[];
 
     transform(
@@ -25,16 +22,12 @@ export class FilterPipe implements PipeTransform {
         value: string
     ): any[] {
 
-        this.items = items;
-        this.field = field;
-        this.value = value;
-
-        if (this.items && this.field && this.value){
-            this.nodes = this.field ? this.field.split(".") : [];
-            this.items = _.filter(this.items, (item) => this.traverse(item) === this.value);
+        if (items && field){
+            this.nodes = field ? field.split(".") : [];
+            items = _.filter(items, (item) => this.traverse(item) === value);
         }
 
-        return this.items;
+        return items;
     }
 
     private traverse(item): any {

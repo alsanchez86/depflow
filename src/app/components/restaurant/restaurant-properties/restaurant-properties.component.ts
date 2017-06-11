@@ -1,5 +1,5 @@
 // Basics
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';

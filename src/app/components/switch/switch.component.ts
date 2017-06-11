@@ -1,5 +1,5 @@
 // Basic imports
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 // nexter
 let next = 0;
@@ -11,6 +11,9 @@ let next = 0;
 })
 
 export class SwitchComponent {
+  @Input() checked;
+  @Input() action: Function;
+
   public id: string;
 
   constructor(

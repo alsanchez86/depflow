@@ -24,8 +24,12 @@ export class RestaurantComponent {
   public id: string;
   public restaurants: Restaurant[];
   public filters: object[];
+  public filter: string;
+  public activeFilter: boolean;
   public options: object[];
   public order: any;
+
+  public prueba: number;
 
   constructor(
     private elem: ElementRef,
@@ -37,17 +41,26 @@ export class RestaurantComponent {
 
   ngOnInit(){
     // filters
-    this.filters = [{
+    this.filters = [
+    {
+      value: 0,
+      text: "Llenos",
+      active: false
+    },
+    {
       value: 1,
-      text: "1 Mesa"
+      text: "1 Mesa",
+      active: false
     },
     {
       value: 2,
-      text: "2 Mesas"
+      text: "2 Mesas",
+      active: true
     }];
 
     // options
-    this.options = [{
+    this.options = [
+    {
       value: "DESC",
       text: "Descendente",
       active: false
@@ -57,6 +70,18 @@ export class RestaurantComponent {
       text: "Ascendente",
       active: true
     }];
+
+    // activeFilter
+    this.activeFilter = false;
+
+    this.prueba = 1;
+
+    // filter
+    this.filter = _.chain(this.filters)
+                  .filter(function(option) { return option["active"]; })
+                  .map(function(option){ return option["value"]; })
+                  .first()
+                  .value();
 
     // order (active option)
     this.order = _.chain(this.options)
@@ -75,7 +100,16 @@ export class RestaurantComponent {
       .then(data => this.restaurants = data);
   }
 
-  public setOrder(event): any {
-    this.order = event.target.value;
-  }  
+  public toggleFilter(): void {
+
+    this.activeFilter = ! this.activeFilter;
+
+    console.log(this.activeFilter);
+  }
+
+  public updatePrueba(): void {
+    console.log("prueba");
+
+    this.prueba++;
+  }
 }

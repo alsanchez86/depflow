@@ -22,10 +22,10 @@ export class OrderPipe implements PipeTransform {
     items: any[],
     field: string,
     direction: string
-  ): any[] {        
+  ): any[] {
 
-    if (items){
-      this.list = _.sortBy(items, field);      
+    if (items && field){
+      this.list = _.sortBy(items, field);
 
       if (direction === 'ASC') {
         this.list.reverse();

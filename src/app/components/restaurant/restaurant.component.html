@@ -5,11 +5,15 @@
 
       <div class="row">
         <div class="col col-3 col-sm-4 col-md-3 col-lg-3">
-          <switch-component></switch-component>
+          <switch-component [action]="toggleFilter" [checked]="activeFilter"></switch-component>
+          {{ activeFilter }}
+
+          <button type="button" name="button" (click)="updatePrueba()">zz</button>
+          {{ prueba }}
         </div>
 
         <div class="col col-9 col-sm-8 col-md-9 col-lg-9">
-          <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
+          <div [(ngModel)]="filter" ngbRadioGroup name="radioBasic">
             <label *ngFor="let item of filters" class="btn btn-primary">
               <input type="radio" [value]="item.value">
               <span>{{ item.text }}</span>
@@ -23,7 +27,7 @@
       <h5>Orden</h5>
 
       <div class="form-group">
-        <select class="form-control" [ngModel]="order" (change)="setOrder($event)">
+        <select class="form-control" [(ngModel)]="order">
           <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
         </select>
       </div>
@@ -31,7 +35,7 @@
   </div>
 
   <ngb-accordion #acc="ngbAccordion">
-    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
+    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':filter; let i = index;" title="{{ item._source.name }}">
       <ng-template ngbPanelContent>
         <restaurant-properties [node]="item"></restaurant-properties>
       </ng-template>
