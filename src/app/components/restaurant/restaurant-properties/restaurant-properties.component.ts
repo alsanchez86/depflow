@@ -1,8 +1,8 @@
 // Basics
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
-// Classes
-import { Restaurant } from '../../../classes';
+// Extra imports
+import * as _ from 'underscore';
 
 // nexter
 let next = 0;
@@ -14,18 +14,18 @@ let next = 0;
 })
 
 export class RestaurantPropertiesComponent {
-  @Input() item;
+  @Input() node;
 
   public id: string;
-  public restaurant: Restaurant;
 
   constructor(
     private elem: ElementRef
   ){
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+  }
 
-    // restaurant
-    // this.restaurant = item;
+  public isArrayObject (value: any): boolean {
+    return _.isArray(value) || _.isObject(value);
   }
 }

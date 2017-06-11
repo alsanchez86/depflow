@@ -33,7 +33,7 @@
   <ngb-accordion #acc="ngbAccordion">
     <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':0; let i = index;" title="{{ item._source.name }}">
       <ng-template ngbPanelContent>
-        <restaurant-properties [item]="item"></restaurant-properties>
+        <restaurant-properties [node]="item"></restaurant-properties>
       </ng-template>
     </ngb-panel>
   </ngb-accordion>

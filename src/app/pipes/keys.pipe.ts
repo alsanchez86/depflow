@@ -24,8 +24,8 @@ export class KeysPipe implements PipeTransform {
     this.item = item;
     this.keys = [];
 
-    _.each(this.item, (value, key, list) => {
-      this.keys.push({value: value, key: key});
+    _.each (this.item, (value, key, list) => {
+      this.keys.push ({value: value, key: key});
     });
 
     return this.keys;
