@@ -1,0 +1,21 @@
+<div id="{{ id }}" class="{{ id }}">
+  <ul>
+    <li *ngFor="let property of item | keys">
+      <strong>{{ property.key }}:</strong> {{ property.value }}
+
+      <!-- <div *ngIf="! isObject(property.value)">
+          <strong>{{ property.key }}:</strong> {{ property.value }}
+      </div> -->
+
+      <!-- <div *ngIf="isObject(property.value)">
+          <strong>{{ property.key }}:</strong>
+
+          <ul>
+            <li *ngFor="let property of property.value | keys">
+              <strong>{{ property.key }}:</strong> {{ property.value }}
+            </li>
+          </ul>
+      </div> -->
+    </li>
+  </ul>
+</div>

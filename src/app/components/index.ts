@@ -5,3 +5,4 @@ export * from './carousel/carousel.component';
 export * from './collapse/collapse.component';
 export * from './switch/switch.component';
 export * from './restaurant/restaurant.component';
+export * from './restaurant/restaurant-properties/restaurant-properties.component';

@@ -79,7 +79,7 @@ export class RestaurantComponent {
     this.order = event.target.value;
   }
 
-  public isObject(value: any): boolean {
-    return _.isObject(value);
-  }
+  // public isObject(value: any): boolean {
+  //   return _.isObject(value);
+  // }
 }

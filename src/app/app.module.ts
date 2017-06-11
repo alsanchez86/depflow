@@ -24,7 +24,8 @@ import {
   CarouselComponent,
   CollapseComponent,
   SwitchComponent,
-  RestaurantComponent
+  RestaurantComponent,
+  RestaurantPropertiesComponent
 } from './components';
 
 // Layouts
@@ -79,6 +80,7 @@ import {
     CollapseComponent,
     SwitchComponent,
     RestaurantComponent,
+    RestaurantPropertiesComponent,
 
     // layouts
     HeaderLayout,
