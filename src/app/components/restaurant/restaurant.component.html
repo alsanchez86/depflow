@@ -1,14 +1,14 @@
 <div id="{{ id }}" class="{{ id }}">  
   <div class="row">
-    <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="col col-12 col-sm-8 col-md-9 col-lg-9">
       <h5>Filtros: mesas libres</h5>
 
       <div class="row">
-        <div class="col col-3 col-sm-4 col-md-3 col-lg-3">
+        <div class="col col-3 col-sm-3 col-md-2 col-lg-2">
           <switch-component [action]="toggleFilter" [checked]="activeFilter"></switch-component>          
         </div>
 
-        <div class="col col-9 col-sm-8 col-md-9 col-lg-9">
+        <div class="col col-9 col-sm-9 col-md-10 col-lg-10">
           <div [(ngModel)]="filter" ngbRadioGroup name="radioBasic">
             <label *ngFor="let item of filters | filter:'render':true" class="btn btn-primary" [ngClass]="{'disabled': !activeFilter}">
               <input type="radio" [value]="item.value">
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="col col-12 col-sm-4 col-md-3 col-lg-3">
       <h5>Orden</h5>
 
       <div class="form-group">

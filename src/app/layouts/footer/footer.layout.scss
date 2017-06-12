@@ -1,9 +1,10 @@
 @import "../../../styles/basics";
 
 :host /deep/ div.footer-component {
+    height: 100%;
     margin-top: 20px;
     padding: 20px;
 
     color: $white;
-    background-color: $primary-color;
+    background-color: $primary-color-dark;
 }
