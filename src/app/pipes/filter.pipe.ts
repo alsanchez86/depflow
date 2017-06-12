@@ -22,7 +22,7 @@ export class FilterPipe implements PipeTransform {
         value: string
     ): any[] {
 
-        if (items && field){
+        if (items && field && value != null){
             this.nodes = field ? field.split(".") : [];
             items = _.filter(items, (item) => this.traverse(item) === value);
         }

@@ -9,6 +9,11 @@
     cursor: pointer;
 }
 
+// disabled
+.disabled {
+  pointer-events: none;  	
+}
+
 // selectors
 .custom-select,
 select.form-control {

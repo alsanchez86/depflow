@@ -28,8 +28,7 @@ export class RestaurantComponent {
   public activeFilter: boolean;
   public options: object[];
   public order: any;
-
-  public prueba: number;
+  public toggleFilter: Function;  
 
   constructor(
     private elem: ElementRef,
@@ -43,19 +42,28 @@ export class RestaurantComponent {
     // filters
     this.filters = [
     {
+      value: null,
+      text: "",
+      render: false,
+      active: true
+    },
+    {
       value: 0,
       text: "Llenos",
+      render: true,
       active: false
     },
     {
       value: 1,
       text: "1 Mesa",
+      render: true,
       active: false
     },
     {
       value: 2,
       text: "2 Mesas",
-      active: true
+      render: true,
+      active: false
     }];
 
     // options
@@ -72,9 +80,7 @@ export class RestaurantComponent {
     }];
 
     // activeFilter
-    this.activeFilter = false;
-
-    this.prueba = 1;
+    this.activeFilter = false;        
 
     // filter
     this.filter = _.chain(this.filters)
@@ -92,24 +98,28 @@ export class RestaurantComponent {
 
     // get Restaurants from API
     this.getRestaurants();
+
+    // toggleFilter
+    this.toggleFilter = this.toggleFilterCallback.bind(this);
+  }
+
+  public toggleFilterCallback(){    
+    this.activeFilter = !this.activeFilter;
+
+     if (! this.activeFilter){
+       this.filter = null;
+     }else{
+       // coger el activo o en su defecto el último elemento
+       this.filter = _.chain(this.filters)                      
+                      .map(function(option){ return option["value"]; })
+                      .last()
+                      .value();
+     }
   }
 
   private getRestaurants(): void {
     this.restaurantService
       .getAll()
       .then(data => this.restaurants = data);
-  }
-
-  public toggleFilter(): void {
-
-    this.activeFilter = ! this.activeFilter;
-
-    console.log(this.activeFilter);
-  }
-
-  public updatePrueba(): void {
-    console.log("prueba");
-
-    this.prueba++;
   }
 }
