@@ -52,8 +52,8 @@ label {
 // btn groups
 .btn-group {
   .btn {
-      border-right: 1px solid $white;
-      border-left: 1px solid $white;
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
 
       &:first-child {
         border-left: 0;
