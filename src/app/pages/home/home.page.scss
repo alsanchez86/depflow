@@ -1,5 +1,9 @@
 @import "../../../styles/basics";
 
 :host /deep/ {            
-    
+    div.home {
+        padding: 60px 0;
+
+        background-color: $white;
+    }
 }

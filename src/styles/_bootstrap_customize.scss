@@ -66,12 +66,22 @@ label {
 }
 
 // collapse
-.card-header {
+.card {
+  border-bottom: 0;
+
+  .card-header {
     padding: 0;
 
+    &.active {
+      border-color: $primary-color;
+      border-bottom-style: dotted;
+    }
+
     a {
-        @include link($link-color, $link-hover-color, none, none);
+        @include link($primary-text-color, $link-hover-color, none, none);
         display: block;
         padding: 0.75rem 1.25rem;
     }
+  }
 }
+

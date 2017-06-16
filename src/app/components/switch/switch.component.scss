@@ -1,9 +1,13 @@
 @import "../../../styles/basics";
 
 $size: 15px;
+$diff: 3px;
 
 :host /deep/ {
   .switch {
+    padding-top: $diff;
+    padding-left: $diff;
+
     input {
       display: none;
     }
@@ -13,7 +17,7 @@ $size: 15px;
     position: relative;
     display: block;
     height: $size;
-    width: ($size * 2) + 3;
+    width: ($size * 2) + $diff;
 
     background: #898989;
     border-radius: 100px;
@@ -23,8 +27,8 @@ $size: 15px;
     &:after {
       content: '';
       position: absolute;
-      left: -2px;
-      top: -3px;
+      left: -$diff;
+      top: -$diff;
       display: block;
       width: $size + 5;
       height: $size + 5;
