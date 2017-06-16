@@ -8,16 +8,21 @@
 
       <div class="row">
         <div class="col col-3 col-sm-3 col-md-2 col-lg-2">
-          <switch-component [action]="toggleFilter" [checked]="activeFilter"></switch-component>          
+          <switch-component (action)="switchComponent($event)" [checked]="activeFilter"></switch-component>          
         </div>
 
         <div class="col col-9 col-sm-9 col-md-10 col-lg-10">
+
+
           <div [(ngModel)]="filter" ngbRadioGroup name="radioBasic">
             <label *ngFor="let item of filters | filter:'render':true" class="btn btn-primary" [ngClass]="{'disabled': !activeFilter}">
               <input type="radio" [value]="item.value">
               <span>{{ item.text }}</span>
             </label>
           </div>
+
+
+          
         </div>
       </div>
     </div>

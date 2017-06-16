@@ -1,5 +1,5 @@
 // Basic imports
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 // nexter
 let next = 0;
@@ -12,14 +12,19 @@ let next = 0;
 
 export class SwitchComponent {
   @Input() checked;
-  @Input() action: Function;
+  @Output() action = new EventEmitter();  
 
-  public id: string;
+  public id: string;  
 
   constructor(
     private elem: ElementRef
   ){
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+  }
+
+  toggle(): void {    
+    this.checked = !this.checked;  
+    this.action.emit(this.checked);
   }
 }

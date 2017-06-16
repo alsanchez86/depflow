@@ -27,8 +27,7 @@ export class RestaurantComponent {
   public filter: string;
   public activeFilter: boolean;
   public options: object[];
-  public order: any;
-  public toggleFilter: Function;  
+  public order: any;  
 
   constructor(
     private elem: ElementRef,
@@ -98,15 +97,13 @@ export class RestaurantComponent {
 
     // get Restaurants from API
     this.getRestaurants();
-
-    // toggleFilter
-    this.toggleFilter = this.toggleFilterCallback.bind(this);
   }
 
-  public toggleFilterCallback(){    
-    this.activeFilter = !this.activeFilter;
+  public switchComponent(event): void {
+    this.activeFilter = event;    
 
-     if (! this.activeFilter){
+    
+    if (! this.activeFilter){
        this.filter = null;
      }else{
        // coger el activo o en su defecto el último elemento
@@ -114,7 +111,7 @@ export class RestaurantComponent {
                       .map(function(option){ return option["value"]; })
                       .last()
                       .value();
-     }
+     }      
   }
 
   private getRestaurants(): void {

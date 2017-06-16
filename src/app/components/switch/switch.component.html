@@ -1,6 +1,6 @@
 <div id="{{ id }}" class="{{ id }}">
   <div class="switch">
-    <input type="checkbox" id="switch-{{ id }}" class="cbx" (click)="action(event)" [checked]="checked"/>
+    <input type="checkbox" id="switch-{{ id }}" class="cbx" (click)="toggle($event)" [checked]="checked"/>
     <label for="switch-{{ id }}" class="lbl"></label>
   </div>
 </div>
