@@ -14,12 +14,14 @@
         </div>
 
         <div class="col col-9 col-sm-9 col-md-10 col-lg-10">
-          <div [(ngModel)]="filter" ngbRadioGroup name="radioBasic">
+          <!-- componetizar como switch -->
+          <div [(ngModel)]="filter" ngbRadioGroup>
             <label *ngFor="let item of filters | filter:'render':true" class="btn btn-primary" [ngClass]="{'disabled': !activeFilter}">
               <input type="radio" [value]="item.value">
               <span>{{ item.text }}</span>
             </label>
           </div>
+          <!-- componetizar como switch -->
         </div>
       </div>
     </div>
@@ -30,9 +32,21 @@
       </h5>
 
       <div class="form-group">
+        <!-- componetizar como switch -->
         <select class="form-control" [(ngModel)]="order">
           <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
         </select>
+
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item">Action - 1</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <!-- componetizar como switch -->
       </div>
     </div>
   </div>
@@ -42,6 +56,6 @@
   </h5>
 
   <!-- restaurant accordion component -->
-  <restaurant-accordion-component [restaurants]="restaurants" [order]="order"></restaurant-accordion-component>
+  <restaurant-accordion-component [restaurants]="restaurants" [order]="order" [filter]="filter"></restaurant-accordion-component>
   <!-- / restaurant accordion component -->
 </div>
