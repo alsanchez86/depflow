@@ -4,8 +4,7 @@ import { Component, ElementRef } from '@angular/core';
 // nexter
 let next = 0;
 
-@Component({
-  moduleId: module.id,
+@Component({  
   selector: 'carousel-component',
   templateUrl: 'carousel.component.html',
   styleUrls: ['carousel.component.scss']

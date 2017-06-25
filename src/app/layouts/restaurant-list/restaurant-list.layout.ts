@@ -14,20 +14,20 @@ import * as _ from 'underscore';
 let next = 0;
 
 @Component({
-  selector: 'restaurant-component',
-  templateUrl: './restaurant.component.html',
-  styleUrls: ['./restaurant.component.scss']
+  selector: 'restaurant-list-layout',
+  templateUrl: './restaurant-list.layout.html',
+  styleUrls: ['./restaurant-list.layout.scss']
 })
 
-export class RestaurantComponent {
-  // public selectedRestaurant: Restaurant; // object restaurant
+export class RestaurantListLayout {
   public id: string;
   public restaurants: Restaurant[];
   public filters: object[];
   public filter: string;
   public activeFilter: boolean;
   public options: object[];
-  public order: any;  
+  public order: any;
+  // public selectedRestaurant: Restaurant; // object restaurant
 
   constructor(
     private elem: ElementRef,
@@ -79,7 +79,7 @@ export class RestaurantComponent {
     }];
 
     // activeFilter
-    this.activeFilter = false;        
+    this.activeFilter = false;
 
     // filter
     this.filter = _.chain(this.filters)
@@ -97,21 +97,22 @@ export class RestaurantComponent {
 
     // get Restaurants from API
     this.getRestaurants();
+
+    console.log(this.filter);
   }
 
   public switchComponent(event): void {
-    this.activeFilter = event;    
+    this.activeFilter = event;
 
-    
     if (! this.activeFilter){
        this.filter = null;
      }else{
        // coger el activo o en su defecto el último elemento
-       this.filter = _.chain(this.filters)                      
+       this.filter = _.chain(this.filters)
                       .map(function(option){ return option["value"]; })
                       .last()
                       .value();
-     }      
+     }
   }
 
   private getRestaurants(): void {

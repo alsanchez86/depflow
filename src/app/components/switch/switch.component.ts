@@ -12,19 +12,22 @@ let next = 0;
 
 export class SwitchComponent {
   @Input() checked;
-  @Output() action = new EventEmitter();  
+  @Output() action = new EventEmitter();
 
-  public id: string;  
+  public id: string;
 
   constructor(
     private elem: ElementRef
   ){
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+
+    // init
+    this.checked = false;
   }
 
-  toggle(): void {    
-    this.checked = !this.checked;  
+  toggle(): void {
+    this.checked = !this.checked;
     this.action.emit(this.checked);
   }
 }

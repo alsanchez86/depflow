@@ -3,7 +3,7 @@
     <li *ngFor="let property of node | keys">
       <strong>{{ property.key }}:</strong> <span *ngIf="! isArrayObject(property.value)">{{ property.value }}</span>
 
-      <restaurant-properties *ngIf="isArrayObject(property.value)" [node]="property.value"></restaurant-properties>
+      <restaurant-properties-component *ngIf="isArrayObject(property.value)" [node]="property.value"></restaurant-properties-component>
     </li>
   </ul>
 </div>

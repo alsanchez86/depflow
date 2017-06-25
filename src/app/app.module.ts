@@ -24,7 +24,7 @@ import {
   CarouselComponent,
   CollapseComponent,
   SwitchComponent,
-  RestaurantComponent,
+  RestaurantAccordionComponent,
   RestaurantPropertiesComponent
 } from './components';
 
@@ -32,7 +32,8 @@ import {
 import {
   HeaderLayout,
   FooterLayout,
-  SidebarLayout
+  SidebarLayout,
+  RestaurantListLayout
 } from './layouts';
 
 // Pages
@@ -79,13 +80,14 @@ import {
     CarouselComponent,
     CollapseComponent,
     SwitchComponent,
-    RestaurantComponent,
+    RestaurantAccordionComponent,
     RestaurantPropertiesComponent,
 
     // layouts
     HeaderLayout,
     FooterLayout,
     SidebarLayout,
+    RestaurantListLayout,
 
     // pages
     NotFoundPage,

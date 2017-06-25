@@ -8,7 +8,7 @@ import * as _ from 'underscore';
 let next = 0;
 
 @Component({
-  selector: 'restaurant-properties',
+  selector: 'restaurant-properties-component',
   templateUrl: './restaurant-properties.component.html',
   styleUrls: ['./restaurant-properties.component.scss']
 })

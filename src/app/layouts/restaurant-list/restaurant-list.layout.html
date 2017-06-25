@@ -1,35 +1,32 @@
-<div id="{{ id }}" class="{{ id }}">  
+<div id="{{ id }}" class="{{ id }}">
   <div class="row">
     <div class="col col-12 col-sm-8 col-md-9 col-lg-9">
       <h5>
         <strong>Filtros:</strong>
-        <small>mesas libres</small>        
+        <small>mesas libres</small>
       </h5>
 
       <div class="row">
         <div class="col col-3 col-sm-3 col-md-2 col-lg-2">
-          <switch-component (action)="switchComponent($event)" [checked]="activeFilter"></switch-component>          
+          <!-- switch component -->
+          <switch-component (action)="switchComponent($event)" [checked]="activeFilter"></switch-component>
+          <!-- / switch component -->
         </div>
 
         <div class="col col-9 col-sm-9 col-md-10 col-lg-10">
-
-
           <div [(ngModel)]="filter" ngbRadioGroup name="radioBasic">
             <label *ngFor="let item of filters | filter:'render':true" class="btn btn-primary" [ngClass]="{'disabled': !activeFilter}">
               <input type="radio" [value]="item.value">
               <span>{{ item.text }}</span>
             </label>
           </div>
-
-
-          
         </div>
       </div>
     </div>
 
     <div class="col col-12 col-sm-4 col-md-3 col-lg-3">
       <h5>
-        <strong>Orden:</strong>        
+        <strong>Orden:</strong>
       </h5>
 
       <div class="form-group">
@@ -41,14 +38,10 @@
   </div>
 
   <h5>
-    <strong>Lista de restaurantes:</strong>    
+    <strong>Lista de restaurantes:</strong>
   </h5>
 
-  <ngb-accordion #acc="ngbAccordion">
-    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':filter; let i = index;" title="{{ item._source.name }}">
-      <ng-template ngbPanelContent>
-        <restaurant-properties [node]="item"></restaurant-properties>
-      </ng-template>
-    </ngb-panel>
-  </ngb-accordion>
+  <!-- restaurant accordion component -->
+  <restaurant-accordion-component [restaurants]="restaurants" [order]="order"></restaurant-accordion-component>
+  <!-- / restaurant accordion component -->
 </div>
