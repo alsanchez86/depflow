@@ -101,6 +101,10 @@ export class RestaurantListLayout {
     console.log(this.filter);
   }
 
+  public setOrder(value): void {
+    this.order = value;
+  }
+
   public switchComponent(event): void {
     this.activeFilter = event;
 

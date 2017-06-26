@@ -24,6 +24,7 @@ import {
   CarouselComponent,
   CollapseComponent,
   SwitchComponent,
+  DropdownComponent,
   RestaurantAccordionComponent,
   RestaurantPropertiesComponent
 } from './components';
@@ -80,6 +81,7 @@ import {
     CarouselComponent,
     CollapseComponent,
     SwitchComponent,
+    DropdownComponent,
     RestaurantAccordionComponent,
     RestaurantPropertiesComponent,
 

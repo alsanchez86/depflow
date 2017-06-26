@@ -26,28 +26,10 @@
       </div>
     </div>
 
-    <div class="col col-12 col-sm-4 col-md-3 col-lg-3">
-      <h5>
-        <strong>Orden:</strong>
-      </h5>
-
-      <div class="form-group">
-        <!-- componetizar como switch -->
-        <select class="form-control" [(ngModel)]="order">
-          <option *ngFor="let item of options" value="{{ item.value }}" [selected]="item.active">{{ item.text }}</option>
-        </select>
-
-        <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
-            <button class="dropdown-item">Action - 1</button>
-            <button class="dropdown-item">Another Action</button>
-            <button class="dropdown-item">Something else is here</button>
-          </div>
-        </div>
-        <!-- componetizar como switch -->
-      </div>
+    <div class="col col-12 col-sm-4 col-md-3 col-lg-3">    
+      <!-- dropdown component -->
+      <dropdown-component (action)="setOrder($event)" [options]="options" [active]="order"></dropdown-component>            
+      <!-- / dropdown component -->
     </div>
   </div>
 

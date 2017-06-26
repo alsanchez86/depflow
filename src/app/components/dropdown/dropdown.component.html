@@ -1,0 +1,13 @@
+<div class="{{ id }}">
+  <div ngbDropdown class="d-inline-block">
+    <button id="{{ id }}" class="btn btn-outline-primary" ngbDropdownToggle>
+      {{ active }}
+    </button>
+
+    <div class="dropdown-menu">
+      <button class="dropdown-item" *ngFor="let item of options" (click)="click(item.value)">
+        {{ item.text }}
+      </button>            
+    </div>
+  </div>
+</div>
