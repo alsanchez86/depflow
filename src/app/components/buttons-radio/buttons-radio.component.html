@@ -1,17 +1,8 @@
 <div id="{{ id }}" class="{{ id }}">
-  <div [(ngModel)]="model" ngbRadioGroup name="radioBasic">
-    <label class="btn btn-primary">
-      <input type="radio" [value]="1"> Left (pre-checked)
-    </label>
-
-    <label class="btn btn-primary">
-      <input type="radio" value="middle"> Middle
-    </label>
-
-    <label class="btn btn-primary">
-      <input type="radio" [value]="false"> Right
+  <div ngbRadioGroup>
+    <label *ngFor="let item of options | filter:'render':true" class="btn btn-primary" (click)="click(item)" [ngClass]="{'active': item.value == active.value}">
+      <input type="radio" [value]="item.value">
+      <span>{{ item.text }}</span>
     </label>
   </div>
-
-  <pre>{{model}}</pre>
 </div>

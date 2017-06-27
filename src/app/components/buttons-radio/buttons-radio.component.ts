@@ -1,5 +1,5 @@
 // Basics
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 // nexter
 let next = 0;
@@ -11,6 +11,10 @@ let next = 0;
 })
 
 export class ButtonsRadioComponent {
+  @Input() active;
+  @Input() options;
+  @Output() action = new EventEmitter();
+
   public id: string;
 
   constructor(
@@ -20,7 +24,7 @@ export class ButtonsRadioComponent {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
-  ngOnInit(){
-
+  click (option): void {    
+    this.action.emit(option);
   }
 }

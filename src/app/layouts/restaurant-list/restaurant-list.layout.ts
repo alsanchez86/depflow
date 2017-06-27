@@ -23,10 +23,12 @@ export class RestaurantListLayout {
   public id: string;
   public restaurants: Restaurant[];
   public filters: object[];
-  public filter: string;
+  public filter: object;
+  private defaultFilter: object;
   public activeFilter: boolean;
   public options: object[];
-  public order: any;
+  public order: object;
+  private defaultOrder: object;
   // public selectedRestaurant: Restaurant; // object restaurant
 
   constructor(
@@ -78,22 +80,14 @@ export class RestaurantListLayout {
       active: true
     }];
 
-    // activeFilter
-    this.activeFilter = false;
-
     // filter
-    this.filter = _.chain(this.filters)
-                  .filter(function(option) { return option["active"]; })
-                  .map(function(option){ return option["value"]; })
-                  .first()
-                  .value();
+    this.activeFilter   = false;
+    this.defaultFilter  = this.getDefaultFilter();
+    this.filter         = this.defaultFilter;
 
     // order (active option)
-    this.order = _.chain(this.options)
-                  .filter(function(option) { return option["active"]; })
-                  .map(function(option){ return option; })
-                  .first()
-                  .value();
+    this.defaultOrder = this.getDefaultOrder();
+    this.order        = this.defaultOrder;
 
     // get Restaurants from API
     this.getRestaurants();    
@@ -103,18 +97,40 @@ export class RestaurantListLayout {
     this.order = option;
   }
 
-  public switchComponent(event): void {
+  public setFilter(option): void {    
+    if (this.activeFilter){
+      this.filter = option;
+    }    
+  }
+
+  public switchFilter (event): void {   
     this.activeFilter = event;
 
     if (! this.activeFilter){
-       this.filter = null;
-     }else{
-       // coger el activo o en su defecto el último elemento
+       this.filter = this.defaultFilter;
+    }else{
+      // coger el activo o en su defecto el último elemento
        this.filter = _.chain(this.filters)
-                      .map(function(option){ return option["value"]; })
+                      .map(function(option){ return option; })
                       .last()
                       .value();
      }
+  }
+
+  private getDefaultFilter(): object {
+    return _.chain(this.filters)
+            .filter(function(option) { return option["active"]; })
+            .map(function(option){ return option; })
+            .first()
+            .value();
+  }
+
+  private getDefaultOrder(): object {
+    return _.chain(this.options)
+            .filter(function(option) { return option["active"]; })
+            .map(function(option){ return option; })
+            .first()
+            .value();
   }
 
   private getRestaurants(): void {
