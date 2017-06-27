@@ -24,7 +24,7 @@ export class DropdownComponent {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;   
   }
 
-  click (value): void {    
-    this.action.emit(value);
+  click (option): void {    
+    this.action.emit(option);
   }
 }

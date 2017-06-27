@@ -91,18 +91,16 @@ export class RestaurantListLayout {
     // order (active option)
     this.order = _.chain(this.options)
                   .filter(function(option) { return option["active"]; })
-                  .map(function(option){ return option["value"]; })
+                  .map(function(option){ return option; })
                   .first()
                   .value();
 
     // get Restaurants from API
-    this.getRestaurants();
-
-    console.log(this.filter);
+    this.getRestaurants();    
   }
 
-  public setOrder(value): void {
-    this.order = value;
+  public setOrder(option): void {
+    this.order = option;
   }
 
   public switchComponent(event): void {

@@ -1,11 +1,11 @@
 <div class="{{ id }}">
   <div ngbDropdown class="d-inline-block">
     <button id="{{ id }}" class="btn btn-outline-primary" ngbDropdownToggle>
-      {{ active }}
+      {{ active.text }}
     </button>
 
     <div class="dropdown-menu">
-      <button class="dropdown-item" *ngFor="let item of options" (click)="click(item.value)">
+      <button class="dropdown-item" *ngFor="let item of options" (click)="click(item)" [ngClass]="{'disabled': item.value == active.value}">
         {{ item.text }}
       </button>            
     </div>

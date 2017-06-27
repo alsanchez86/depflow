@@ -3,5 +3,9 @@
 :host /deep/ {
   .dropdown-toggle {
       @include btn();
+
+      &:after {
+        display: none;
+      }
   }
 }
