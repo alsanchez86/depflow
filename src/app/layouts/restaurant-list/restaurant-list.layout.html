@@ -25,6 +25,9 @@
   <h5>
     <strong>Lista de restaurantes:</strong>
   </h5>
-  
+
+  {{ filter.value }}
+  <!-- Dinamic Pipe: https://stackoverflow.com/questions/40003649/angular-2-set-and-remove-custom-pipes -->
+  <!-- https://stackoverflow.com/questions/40565167/angular2-dynamic-pipe -->
   <restaurant-accordion-component [restaurants]="restaurants" [order]="order" [filter]="filter" [active]="switchOn"></restaurant-accordion-component>  
 </div>

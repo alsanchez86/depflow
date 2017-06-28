@@ -28,11 +28,8 @@ export class RestaurantListLayout {
 
   public switchOn: boolean; 
   public filter: object;
-  public order: object;
-
-  private defaultFilter: object;
-  private defaultOrder: object;
-  // public selectedRestaurant: Restaurant; // object restaurant
+  public order: object;  
+  // public selectedRestaurant: Restaurant;
 
   constructor(
     private elem: ElementRef,
@@ -76,18 +73,13 @@ export class RestaurantListLayout {
       text: "Ascendente",
       active: true
     }];
-
-    // filter
-    this.switchOn       = false;
-    this.defaultFilter  = this.getDefaultFilter();
-    this.filter         = this.defaultFilter;
-
-    // order (active option)
-    this.defaultOrder = this.getDefaultOrder();
-    this.order        = this.defaultOrder;
-
+    
+    this.switchOn = false;    
+    this.filter   = this.getDefaultFilter();   
+    this.order    = this.getDefaultOrder();
+    
     // get Restaurants from API
-    this.getRestaurants();    
+    this.getRestaurants(); 
   }
 
   public setOrder(option): void {
@@ -100,18 +92,6 @@ export class RestaurantListLayout {
 
   public setSwitch (event): void {   
     this.switchOn = event;
-
-    /*
-    if (! this.switchOn){
-       this.filter = this.defaultFilter;
-    }else{
-      // coger el activo o en su defecto el último elemento
-       this.filter = _.chain(this.filters)
-                      .map(function(option){ return option; })
-                      .last()
-                      .value();
-     }
-     */
   }
 
   private getDefaultFilter(): object {
