@@ -8,7 +8,7 @@
 
       <div class="row">
         <div class="col col-3 col-sm-3 col-md-2 col-lg-2">          
-          <switch-component (action)="switchFilter($event)" [checked]="activeFilter"></switch-component>          
+          <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>          
         </div>
 
         <div class="col col-9 col-sm-9 col-md-10 col-lg-10">          
@@ -26,5 +26,5 @@
     <strong>Lista de restaurantes:</strong>
   </h5>
   
-  <restaurant-accordion-component [restaurants]="restaurants" [order]="order.value" [filter]="filter.value"></restaurant-accordion-component>  
+  <restaurant-accordion-component [restaurants]="restaurants" [order]="order" [filter]="filter" [active]="switchOn"></restaurant-accordion-component>  
 </div>

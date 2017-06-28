@@ -26,7 +26,7 @@ export class SwitchComponent {
     this.checked = false;
   }
 
-  click (): void {
+  click(): void {
     this.checked = !this.checked;
     this.action.emit(this.checked);
   }

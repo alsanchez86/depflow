@@ -21,13 +21,16 @@ let next = 0;
 
 export class RestaurantListLayout {
   public id: string;
+
   public restaurants: Restaurant[];
-  public filters: object[];
-  public filter: object;
-  private defaultFilter: object;
-  public activeFilter: boolean;
+  public filters: object[]; 
   public options: object[];
+
+  public switchOn: boolean; 
+  public filter: object;
   public order: object;
+
+  private defaultFilter: object;
   private defaultOrder: object;
   // public selectedRestaurant: Restaurant; // object restaurant
 
@@ -41,13 +44,7 @@ export class RestaurantListLayout {
 
   ngOnInit(){
     // filters
-    this.filters = [
-    {
-      value: null,
-      text: "",
-      render: false,
-      active: true
-    },
+    this.filters = [    
     {
       value: 0,
       text: "Llenos",
@@ -64,7 +61,7 @@ export class RestaurantListLayout {
       value: 2,
       text: "2 Mesas",
       render: true,
-      active: false
+      active: true
     }];
 
     // options
@@ -81,7 +78,7 @@ export class RestaurantListLayout {
     }];
 
     // filter
-    this.activeFilter   = false;
+    this.switchOn       = false;
     this.defaultFilter  = this.getDefaultFilter();
     this.filter         = this.defaultFilter;
 
@@ -97,16 +94,15 @@ export class RestaurantListLayout {
     this.order = option;
   }
 
-  public setFilter(option): void {    
-    if (this.activeFilter){
-      this.filter = option;
-    }    
+  public setFilter(option): void {        
+    this.filter = option;    
   }
 
-  public switchFilter (event): void {   
-    this.activeFilter = event;
+  public setSwitch (event): void {   
+    this.switchOn = event;
 
-    if (! this.activeFilter){
+    /*
+    if (! this.switchOn){
        this.filter = this.defaultFilter;
     }else{
       // coger el activo o en su defecto el último elemento
@@ -115,6 +111,7 @@ export class RestaurantListLayout {
                       .last()
                       .value();
      }
+     */
   }
 
   private getDefaultFilter(): object {

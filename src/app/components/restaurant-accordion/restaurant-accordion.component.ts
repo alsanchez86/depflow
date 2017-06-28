@@ -15,8 +15,8 @@ let next = 0;
 
 export class RestaurantAccordionComponent {
   @Input() restaurants: Restaurant[];
-  @Input() order: string;
-  @Input() filter: any;
+  @Input() order: object;
+  @Input() filter: object;
 
   public id: string;
 

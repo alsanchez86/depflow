@@ -1,6 +1,6 @@
 <div id="{{ id }}" class="{{ id }}"> 
   <ngb-accordion #acc="ngbAccordion">
-    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order | filter:'_source.freeTables':filter; let i = index;" title="{{ item._source.name }}">
+    <ngb-panel *ngFor="let item of restaurants | order:'_source.name':order.value | filter:'_source.freeTables':filter.value; let i = index;" title="{{ item._source.name }}">
       <ng-template ngbPanelContent>
         <restaurant-properties-component [node]="item"></restaurant-properties-component>
       </ng-template>
