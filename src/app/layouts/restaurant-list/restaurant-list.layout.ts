@@ -28,6 +28,7 @@ export class RestaurantListLayout {
 
   public switchOn: boolean; 
   public filter: object;
+  public prueba: object;
   public order: object;  
   // public selectedRestaurant: Restaurant;
 
@@ -75,7 +76,8 @@ export class RestaurantListLayout {
     }];
     
     this.switchOn = false;    
-    this.filter   = this.getDefaultFilter();   
+    this.filter   = this.getDefaultFilter();
+    this.prueba   = this.filter;   
     this.order    = this.getDefaultOrder();
     
     // get Restaurants from API
@@ -92,6 +94,15 @@ export class RestaurantListLayout {
 
   public setSwitch (event): void {   
     this.switchOn = event;
+
+    if (this.switchOn){
+      this.prueba = this.filter;    
+    }else{
+      this.prueba = _.chain(this.filters)            
+                      .map(function(option){ return option; })
+                      .first()
+                      .value();    
+    }
   }
 
   private getDefaultFilter(): object {
