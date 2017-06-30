@@ -5,7 +5,7 @@
     </button>
 
     <div class="dropdown-menu">
-      <button class="dropdown-item" *ngFor="let item of options" (click)="click(item)" [ngClass]="{'disabled': item.value == active.value}">
+      <button class="dropdown-item" *ngFor="let item of options" (click)="click(item)" [class.disabled]="item.value == active.value">
         {{ item.text }}
       </button>            
     </div>

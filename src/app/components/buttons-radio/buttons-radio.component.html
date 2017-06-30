@@ -1,6 +1,6 @@
 <div id="{{ id }}" class="{{ id }}">
   <div ngbRadioGroup>
-    <label *ngFor="let item of options | filter:'render':true" class="btn btn-primary" (click)="click(item)" [ngClass]="{'active': item.value == active.value}">
+    <label *ngFor="let item of options | filter:'render':true" class="btn btn-primary" (click)="click(item)" [class.active]="item.value == active.value">
       <input type="radio" [value]="item.value">
       <span>{{ item.text }}</span>
     </label>
