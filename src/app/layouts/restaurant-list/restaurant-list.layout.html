@@ -28,6 +28,11 @@
 
   {{ filter.value }}
   <!-- Dinamic Pipe: https://stackoverflow.com/questions/40003649/angular-2-set-and-remove-custom-pipes -->
+  
+  <!--
+    En restaurant-accordion-component, un pipe (dynamic) al cual se le pase un pipe y un booleano, y solamente funcionará el pipe cuando dicho booleano sea true.
+  -->
+
   <!-- https://stackoverflow.com/questions/40565167/angular2-dynamic-pipe -->
   <restaurant-accordion-component [restaurants]="restaurants" [order]="order" [filter]="filter" [active]="switchOn"></restaurant-accordion-component>  
 </div>
