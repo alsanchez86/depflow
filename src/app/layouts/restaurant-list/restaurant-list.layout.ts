@@ -24,11 +24,10 @@ export class RestaurantListLayout {
 
   public restaurants: Restaurant[];
   public filters: object[]; 
-  public options: object[];
+  public orders: object[];
 
   public switchOn: boolean; 
-  public filter: object;
-  public prueba: object;
+  public filter: object;  
   public order: object;  
   // public selectedRestaurant: Restaurant;
 
@@ -63,7 +62,7 @@ export class RestaurantListLayout {
     }];
 
     // options
-    this.options = [
+    this.orders = [
     {
       value: "DESC",
       text: "Descendente",
@@ -76,8 +75,7 @@ export class RestaurantListLayout {
     }];
     
     this.switchOn = false;    
-    this.filter   = this.getDefaultFilter();
-    this.prueba   = this.filter;   
+    this.filter   = this.getDefaultFilter();    
     this.order    = this.getDefaultOrder();
     
     // get Restaurants from API
@@ -94,15 +92,6 @@ export class RestaurantListLayout {
 
   public setSwitch (event): void {   
     this.switchOn = event;
-
-    if (this.switchOn){
-      this.prueba = this.filter;    
-    }else{
-      this.prueba = _.chain(this.filters)            
-                      .map(function(option){ return option; })
-                      .first()
-                      .value();    
-    }
   }
 
   private getDefaultFilter(): object {
@@ -114,7 +103,7 @@ export class RestaurantListLayout {
   }
 
   private getDefaultOrder(): object {
-    return _.chain(this.options)
+    return _.chain(this.orders)
             .filter(function(option) { return option["active"]; })
             .map(function(option){ return option; })
             .first()

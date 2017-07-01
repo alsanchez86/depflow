@@ -18,7 +18,7 @@
     </div>
 
     <div class="col col-12 col-sm-4 col-md-3 col-lg-3">          
-      <dropdown-component (action)="setOrder($event)" [options]="options" [active]="order"></dropdown-component>                  
+      <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>                  
     </div>
   </div>
 
@@ -34,5 +34,5 @@
   -->
 
   <!-- https://stackoverflow.com/questions/40565167/angular2-dynamic-pipe -->
-  <restaurant-accordion-component [restaurants]="restaurants" [order]="order" [filter]="prueba"></restaurant-accordion-component>  
+  <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>  
 </div>
