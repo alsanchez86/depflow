@@ -1,26 +1,14 @@
-<div id="{{ id }}" class="{{ id }}">
-  <div class="row">
-    <div class="col col-12 col-sm-8 col-md-9 col-lg-9">
-      <h5>
-        <strong>Filtros:</strong>
-        <small>mesas libres</small>
-      </h5>
+<div id="{{ id }}" class="{{ id }}">  
+  <h5>
+    <strong>Filtros:</strong>
+    <small>mesas libres</small>
+  </h5>
 
-      <div class="row">
-        <div class="col col-3 col-sm-3 col-md-2 col-lg-2">          
-          <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>          
-        </div>
-
-        <div class="col col-9 col-sm-9 col-md-10 col-lg-10">          
-          <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>
-        </div>
-      </div>
-    </div>
-
-    <div class="col col-12 col-sm-4 col-md-3 col-lg-3">          
-      <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>                  
-    </div>
-  </div>
+  <div class="filter-zone">    
+    <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>            
+    <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>      
+    <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>                      
+  </div>  
 
   <h5>
     <strong>Lista de restaurantes:</strong>

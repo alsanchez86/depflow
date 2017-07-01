@@ -5,4 +5,19 @@
     margin-bottom: 1rem;
     font-size: 1rem;
   }
+
+  div.filter-zone {
+    display: flex;    
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;    
+
+    margin-bottom: 1.5rem;
+  }
+
+  @include media-breakpoint-only(xs) {
+    div.filter-zone {
+      flex-direction: column;
+    }
+  }
 }

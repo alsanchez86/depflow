@@ -94,6 +94,7 @@ export class RestaurantListLayout {
   /* filter */
   public setFilter(option): void {        
     this.activeFilter = option;    
+    this.toggleSwitch();
   }
 
   private getActiveFilter(active = true): object {
