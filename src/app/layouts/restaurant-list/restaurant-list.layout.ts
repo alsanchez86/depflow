@@ -42,43 +42,51 @@ export class RestaurantListLayout {
 
   ngOnInit(){
     // filters
-    this.filters = [    
-    {
-      value: 0,
-      text: "Llenos",
-      render: true,
-      active: false
-    },
-    {
-      value: 1,
-      text: "1 Mesa",
-      render: true,
-      active: false
-    },
-    {
-      value: 2,
-      text: "2 Mesas",
-      render: true,
-      active: true
-    }];
+    this.filters = [
+      {
+        value: null,
+        text: "",
+        render: false,
+        active: false
+      },
+      {
+        value: 0,
+        text: "Llenos",
+        render: true,
+        active: false
+      },
+      {
+        value: 1,
+        text: "1 Mesa",
+        render: true,
+        active: false
+      },
+      {
+        value: 2,
+        text: "2 Mesas",
+        render: true,
+        active: true
+      }
+    ];
 
     // options
     this.orders = [
-    {
-      value: "DESC",
-      text: "Descendente",
-      active: false
-    },
-    {
-      value: "ASC",
-      text: "Ascendente",
-      active: true
-    }];
+      {
+        value: "DESC",
+        text: "Descendente",
+        active: false
+      },
+      {
+        value: "ASC",
+        text: "Ascendente",
+        active: true
+      }
+    ];
     
-    /* init */
-    this.switchOn = false;    
-    this.activeFilter   = this.getActiveFilter();    
-    this.order    = this.getActiveOrder();   
+    /* init */    
+    this.activeFilter = this.getActiveFilter();    
+    this.order        = this.getActiveOrder();   
+    this.switchOn     = false;    
     this.toggleSwitch();
     this.getRestaurants(); 
   }
@@ -88,9 +96,9 @@ export class RestaurantListLayout {
     this.activeFilter = option;    
   }
 
-  private getActiveFilter(): object {
+  private getActiveFilter(active = true): object {
     return _.chain(this.filters)
-            .filter(function(option) { return option["active"]; })
+            .filter(function(option) { return active ? option["active"] : option["value"] === null; })
             .map(function(option){ return option; })
             .first()
             .value();
@@ -119,12 +127,7 @@ export class RestaurantListLayout {
     if (this.switchOn){
       this.filter = this.activeFilter;
     }else{
-      this.filter = {
-        value: null,
-        text: "",
-        render: false,
-        active: false
-      };
+      this.filter = this.getActiveFilter(false);
     }
   }
 
