@@ -23,12 +23,13 @@ export class RestaurantListLayout {
   public id: string;
 
   public restaurants: Restaurant[];
-  public filters: object[]; 
-  public orders: object[];
-
-  public switchOn: boolean; 
-  public filter: object;  
+  private filters: object[]; 
+  private orders: object[];
+  
+  public activeFilter: object;
+  private filter: object;    
   public order: object;  
+  public switchOn: boolean; 
   // public selectedRestaurant: Restaurant;
 
   constructor(
@@ -74,27 +75,20 @@ export class RestaurantListLayout {
       active: true
     }];
     
+    /* init */
     this.switchOn = false;    
-    this.filter   = this.getDefaultFilter();    
-    this.order    = this.getDefaultOrder();
-    
-    // get Restaurants from API
+    this.activeFilter   = this.getActiveFilter();    
+    this.order    = this.getActiveOrder();   
+    this.toggleSwitch();
     this.getRestaurants(); 
   }
-
-  public setOrder(option): void {
-    this.order = option;
-  }
-
+  
+  /* filter */
   public setFilter(option): void {        
-    this.filter = option;    
+    this.activeFilter = option;    
   }
 
-  public setSwitch (event): void {   
-    this.switchOn = event;
-  }
-
-  private getDefaultFilter(): object {
+  private getActiveFilter(): object {
     return _.chain(this.filters)
             .filter(function(option) { return option["active"]; })
             .map(function(option){ return option; })
@@ -102,7 +96,12 @@ export class RestaurantListLayout {
             .value();
   }
 
-  private getDefaultOrder(): object {
+  /* order */
+  public setOrder(option): void {
+    this.order = option;
+  }
+
+  private getActiveOrder(): object {
     return _.chain(this.orders)
             .filter(function(option) { return option["active"]; })
             .map(function(option){ return option; })
@@ -110,6 +109,26 @@ export class RestaurantListLayout {
             .value();
   }
 
+  /* switch */
+  public setSwitch (event): void {   
+    this.switchOn = event;
+    this.toggleSwitch();
+  }
+
+  private toggleSwitch(): void {
+    if (this.switchOn){
+      this.filter = this.activeFilter;
+    }else{
+      this.filter = {
+        value: null,
+        text: "",
+        render: false,
+        active: false
+      };
+    }
+  }
+
+  /* get Restaurants from API */
   private getRestaurants(): void {
     this.restaurantService
       .getAll()

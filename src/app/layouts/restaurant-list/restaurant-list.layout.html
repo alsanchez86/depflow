@@ -12,7 +12,7 @@
         </div>
 
         <div class="col col-9 col-sm-9 col-md-10 col-lg-10">          
-          <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="filter"></buttons-radio-component>
+          <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>
         </div>
       </div>
     </div>
@@ -26,13 +26,5 @@
     <strong>Lista de restaurantes:</strong>
   </h5>
 
-  {{ filter.value }}
-  <!-- Dinamic Pipe: https://stackoverflow.com/questions/40003649/angular-2-set-and-remove-custom-pipes -->
-  
-  <!--
-    En restaurant-accordion-component, un pipe (dynamic) al cual se le pase un pipe y un booleano, y solamente funcionará el pipe cuando dicho booleano sea true.
-  -->
-
-  <!-- https://stackoverflow.com/questions/40565167/angular2-dynamic-pipe -->
   <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>  
 </div>
