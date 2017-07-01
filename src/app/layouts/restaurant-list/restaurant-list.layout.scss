@@ -18,6 +18,11 @@
   @include media-breakpoint-only(xs) {
     div.filter-zone {
       flex-direction: column;
+
+      switch-component,
+      buttons-radio-component {
+        margin-bottom: .8rem;
+      }
     }
   }
 }
