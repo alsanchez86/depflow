@@ -92,7 +92,7 @@ export class RestaurantListLayout {
         order: 1
       },
       {
-        name: "_source.name",
+        name: "_type",
         orderly: false,
         order: 1
       },

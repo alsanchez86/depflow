@@ -41,7 +41,7 @@ export class RestaurantTableComponent {
     this.activeOrder = field;
     this.toggleActiveOrder();
 
-    console.log(this.activeOrder);    
+    console.log(this.activeOrder);
   }
 
   private toggleActiveOrder(): void {

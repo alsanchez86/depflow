@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>#</th>
+
                 <th *ngFor="let item of fields; let i = index;">                    
                     <a href="#" *ngIf="item.orderly; else elseBlock" (click)="order($event, item)">
                         {{ item.name }}
@@ -18,8 +19,13 @@
     
         <tbody>
             <tr *ngFor="let item of restaurants | order:activeOrder.name:activeOrder.value | filter:'_source.freeTables':filter.value; let i = index;">
-                <th scope="row">{{ i + 1 }}</th>
-                <th *ngFor="let field of fields; let i = index;">{{ item[field.name] }}</th>                
+                <th scope="row">
+                    {{ i + 1 }}
+                </th>
+
+                <th *ngFor="let field of fields; let i = index;">                    
+                    {{ item[field.name] }}
+                </th>                
             </tr>
         </tbody>
     </table>
