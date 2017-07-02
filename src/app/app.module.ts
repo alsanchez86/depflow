@@ -26,7 +26,8 @@ import {
   SwitchComponent,
   DropdownComponent,
   RestaurantAccordionComponent,
-  RestaurantPropertiesComponent
+  RestaurantPropertiesComponent,
+  RestaurantTableComponent
 } from './components';
 
 // Layouts
@@ -84,6 +85,7 @@ import {
     DropdownComponent,
     RestaurantAccordionComponent,
     RestaurantPropertiesComponent,
+    RestaurantTableComponent,
 
     // layouts
     HeaderLayout,

@@ -25,6 +25,7 @@ export class RestaurantListLayout {
   public restaurants: Restaurant[];
   private filters: object[]; 
   private orders: object[];
+  private fields: object[];
   
   public activeFilter: object;
   private filter: object;    
@@ -81,6 +82,22 @@ export class RestaurantListLayout {
         text: "Ascendente",
         active: true
       }
+    ];
+
+    // fields
+    this.fields = [
+      {
+        name: "_index"
+      },
+      {
+        name: "_type"
+      },
+      {
+        name: "_id"
+      },
+      {
+        name: "_score"
+      }      
     ];
     
     /* init */    

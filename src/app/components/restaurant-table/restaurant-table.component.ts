@@ -8,17 +8,18 @@ import { Restaurant } from '../../classes';
 let next = 0;
 
 @Component({
-  selector: 'restaurant-accordion-component',
-  templateUrl: './restaurant-accordion.component.html',
-  styleUrls: ['./restaurant-accordion.component.scss']
+  selector: 'restaurant-table-component',
+  templateUrl: './restaurant-table.component.html',
+  styleUrls: ['./restaurant-table.component.scss']
 })
 
-export class RestaurantAccordionComponent {
+export class RestaurantTableComponent {
   @Input() restaurants: Restaurant[];
+  @Input() fields: string[];
   @Input() order: object;
-  @Input() filter: object;  
+  @Input() filter: object;
 
-  public id: string;
+  public id: string;  
 
   constructor(
     private elem: ElementRef
