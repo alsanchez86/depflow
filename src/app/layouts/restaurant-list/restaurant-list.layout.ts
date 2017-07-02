@@ -52,7 +52,7 @@ export class RestaurantListLayout {
       },
       {
         value: 0,
-        text: "Llenos",
+        text: "Completos",
         render: true,
         active: false
       },
@@ -73,12 +73,12 @@ export class RestaurantListLayout {
     // options
     this.orders = [
       {
-        value: "DESC",
+        value: 0,
         text: "Descendente",
         active: false
       },
       {
-        value: "ASC",
+        value: 1,
         text: "Ascendente",
         active: true
       }
@@ -87,16 +87,24 @@ export class RestaurantListLayout {
     // fields
     this.fields = [
       {
-        name: "_index"
+        name: "_source.id",
+        orderly: false,
+        order: 1
       },
       {
-        name: "_type"
+        name: "_source.name",
+        orderly: false,
+        order: 1
       },
       {
-        name: "_id"
+        name: "_id",
+        orderly: true,
+        order: 1
       },
       {
-        name: "_score"
+        name: "_score",
+        orderly: true,
+        order: 1
       }      
     ];
     
