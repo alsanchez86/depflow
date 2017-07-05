@@ -1,18 +1,17 @@
-<div id="{{ id }}" class="{{ id }}"> 
-    {{ activeOrder.name }}: {{ activeOrder.order }}    
-    <br>
-
+<div id="{{ id }}" class="{{ id }}">     
     <table class="table table-striped">
         <thead>
             <!-- field -->
             <tr>
                 <th>#</th>
 
-                <th *ngFor="let field of fields; let i = index;">                    
+                <th *ngFor="let field of fields; let i = index;">       
                     <a href="#" *ngIf="field.orderly; else elseBlock" (click)="order($event, field)">
-                        {{ field.name }}                        
-                        <i *ngIf="activeOrder.order" class="fa fa-caret-up" aria-hidden="true"></i>
-                        <i *ngIf="! activeOrder.order" class="fa fa-caret-down" aria-hidden="true"></i>
+                        {{ field.name }}                                            
+                        
+                        <i *ngIf="(field.name == activeOrder.name) && !activeOrder.order" class="fa fa-sort-down" aria-hidden="true"></i>
+                        <i *ngIf="(field.name == activeOrder.name) && activeOrder.order" class="fa fa-sort-up" aria-hidden="true"></i>
+                        <i *ngIf="field.name != activeOrder.name" class="fa fa-sort" aria-hidden="true"></i>
                     </a>
 
                     <ng-template #elseBlock>

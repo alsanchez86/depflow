@@ -1,5 +1,19 @@
 @import "../../../styles/basics";
 
 :host /deep/ {
+    .table {
+        thead {
+            a {
+                @include link($primary-text-color, $link-hover-color, none, none);
 
+                i {
+                    margin-left: 0.2rem;
+                }
+            }
+        }
+
+        i.fa-sort {
+            color: $primary-color-light;
+        }
+    }
 }

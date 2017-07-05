@@ -1,3 +1,7 @@
+/*
+    https://datatables.net/examples/basic_init/table_sorting.html
+*/
+
 // Basics
 import { Component, ElementRef, OnInit, Input } from '@angular/core';
 
