@@ -25,7 +25,7 @@ export class RestaurantListLayout {
   public restaurants: Restaurant[];
   private filters: object[]; 
   private orders: object[];
-  private fields: object[];
+  private tableFields: object[];
   
   public activeFilter: object;
   private filter: object;    
@@ -85,27 +85,32 @@ export class RestaurantListLayout {
     ];
 
     // fields
-    this.fields = [
+    this.tableFields = [
       {
-        name: "_source.id",
-        orderly: false,
-        order: 1
+        name: "_source.Id",
+        orderly: true,
+        order: 0
       },
       {
         name: "_type",
         orderly: false,
-        order: 1
+        order: 0
       },
       {
         name: "_id",
-        orderly: true,
-        order: 1
+        orderly: false,
+        order: 0
       },
       {
         name: "_score",
         orderly: true,
         order: 1
-      }      
+      },      
+      {
+        name: "_source.freeTables",
+        orderly: false,
+        order: 0
+      }
     ];
     
     /* init */    

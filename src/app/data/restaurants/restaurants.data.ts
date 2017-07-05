@@ -25,7 +25,7 @@ export class RestaurantsData implements InMemoryDbService {
          "_index":"restaurants",
          "_type":"locals",
          "_id":"AU5v1mgKlMNHZash_Veq",
-         "_score":0,
+         "_score":1,
          "_source":{
             "Id":"000040610000000000000000",
             "avg_rate":10,
@@ -42,7 +42,7 @@ export class RestaurantsData implements InMemoryDbService {
           "_index":"restaurants",
           "_type":"locals",
           "_id":"AU5v1mgKlMNHZash_VAA",
-          "_score":0,
+          "_score":2,
           "_source":{
              "Id":"000040610000000000002000",
              "avg_rate":10,
@@ -50,6 +50,23 @@ export class RestaurantsData implements InMemoryDbService {
              "freeTables":2,
              "locale":"40.421163375734,-3.6967000961304",
              "name":"BarHa",
+             "phone":"34-915225056",
+             "speciality":"De mercado"
+          },
+          "fields":null
+        },
+        {
+          "_index":"restaurants",
+          "_type":"locals",
+          "_id":"AU5v1mgKlMNHZash_BEE",
+          "_score":4,
+          "_source":{
+             "Id":"000050610000000000002000",
+             "avg_rate":10,
+             "description":"wwwwww",
+             "freeTables":2,
+             "locale":"40.421163375734,-3.6967000961304",
+             "name":"Waraha",
              "phone":"34-915225056",
              "speciality":"De mercado"
           },

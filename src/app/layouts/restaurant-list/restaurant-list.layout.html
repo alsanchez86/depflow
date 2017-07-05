@@ -13,7 +13,7 @@
     <strong>Lista de restaurantes:</strong>
   </h5>
 
-  <restaurant-table-component [restaurants]="restaurants" [fields]="fields" [filter]="filter"></restaurant-table-component>
+  <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
   <br>
   <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component> 
   <br>                     

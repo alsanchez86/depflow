@@ -40,19 +40,35 @@ export class RestaurantTableComponent {
 
     this.activeOrder = field;
     this.toggleActiveOrder();
-
-    console.log(this.activeOrder);
   }
 
   private toggleActiveOrder(): void {
-    this.activeOrder.value = !this.activeOrder.value;
+    this.activeOrder.order = !this.activeOrder.order;
   }
 
+  /*
+    Toma el primer field del array cuyo oderly es true
+  */
   private getActiveOrder(): object {
     return _.chain(this.fields)
             .filter(function(option) { return option["orderly"]; })
             .map(function(option){ return option; })
             .first()
             .value();
+  }
+
+  /*
+    Obtiene el valor de una propiedad de Restaurant dado un string en nomenclatura JSON. Ej: _source.Id
+  */
+  public getRestaurantFieldValue (restaurant:Restaurant, field): object {
+    let parts     = field.split(".");
+    let length    = parts.length;    
+    let property  = restaurant || this;
+
+    for (let i = 0; i < length; i++) {
+      property = property[parts[i]];
+    }
+
+    return property;
   }
 }
