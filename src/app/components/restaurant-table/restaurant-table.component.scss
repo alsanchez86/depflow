@@ -2,6 +2,8 @@
 
 :host /deep/ {
     .table {
+        margin-bottom: 2rem;
+
         thead {
             a {
                 @include link($primary-text-color, $link-hover-color, none, none);

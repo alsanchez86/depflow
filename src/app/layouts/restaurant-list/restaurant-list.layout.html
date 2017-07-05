@@ -1,21 +1,27 @@
 <div id="{{ id }}" class="{{ id }}">  
-  <h5>
-    <strong>Filtros:</strong>
-    <small>mesas libres</small>
-  </h5>
+  <h1>Restaurantes</h1>
 
-  <div class="filter-zone">    
-    <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>            
-    <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>          
+  <h2>Filtros</h2>  
+
+  <div class="filter-zone">
+    <div class="switch-button-radio">
+      <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>            
+      <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>   
+    </div> 
+
+    <dropdown-component (action)="setLimit($event)" [options]="limits" [active]="limit"></dropdown-component>
   </div>  
 
-  <h5>
-    <strong>Lista de restaurantes:</strong>
-  </h5>
+  <h2>Lista de restaurantes</h2>
 
+  <h3>Modo tabla</h3>
   <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
-  <br>
-  <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component> 
-  <br>                     
+  
+  <h3>Modo acordeón</h3>
+
+  <div class="filter-zone filter-zone_2">
+    <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
+  </div>
+  
   <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>
 </div>

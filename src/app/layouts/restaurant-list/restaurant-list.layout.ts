@@ -25,11 +25,13 @@ export class RestaurantListLayout {
   public restaurants: Restaurant[];
   private filters: object[]; 
   private orders: object[];
+  private limits: object[];
   private tableFields: object[];
   
   public activeFilter: object;
   private filter: object;    
   public order: object;  
+  public limit: object;  
   public switchOn: boolean; 
   // public selectedRestaurant: Restaurant;
 
@@ -84,6 +86,25 @@ export class RestaurantListLayout {
       }
     ];
 
+    // limits
+    this.limits = [
+      {
+        value: 5,    
+        text: "Muestra 5",
+        active: true
+      },
+      {
+        value: 10,        
+        text: "Muestra 10",
+        active: false
+      },
+      {
+        value: 20,        
+        text: "Muestra 20",
+        active: false
+      }
+    ];
+
     // fields
     this.tableFields = [
       {
@@ -116,7 +137,9 @@ export class RestaurantListLayout {
     /* init */    
     this.activeFilter = this.getActiveFilter();    
     this.order        = this.getActiveOrder();   
+    this.limit        = this.getActiveLimit();
     this.switchOn     = false;    
+
     this.toggleSwitch();
     this.getRestaurants(); 
   }
@@ -142,6 +165,19 @@ export class RestaurantListLayout {
 
   private getActiveOrder(): object {
     return _.chain(this.orders)
+            .filter(function(option) { return option["active"]; })
+            .map(function(option){ return option; })
+            .first()
+            .value();
+  }
+
+  /* limit */
+  public setLimit(option): void {
+    this.limit = option;
+  }
+
+  private getActiveLimit(): object {
+    return _.chain(this.limits)
             .filter(function(option) { return option["active"]; })
             .map(function(option){ return option; })
             .first()
