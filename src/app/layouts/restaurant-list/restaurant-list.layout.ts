@@ -89,18 +89,18 @@ export class RestaurantListLayout {
     // limits
     this.limits = [
       {
-        value: 5,    
-        text: "Muestra 5",
+        value: 2,    
+        text: "Muestra 2",
         active: true
+      },
+      {
+        value: 5,        
+        text: "Muestra 5",
+        active: false
       },
       {
         value: 10,        
         text: "Muestra 10",
-        active: false
-      },
-      {
-        value: 20,        
-        text: "Muestra 20",
         active: false
       }
     ];

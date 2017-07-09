@@ -24,6 +24,7 @@ export class RestaurantTableComponent {
   @Input() restaurants: Restaurant[];
   @Input() fields: object[];  
   @Input() filter: object;
+  @Input() limit: object;
 
   public id: string;    
   public activeOrder: any;

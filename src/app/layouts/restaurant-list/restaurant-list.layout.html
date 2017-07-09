@@ -15,7 +15,7 @@
   <h2>Lista de restaurantes</h2>
 
   <h3>Modo tabla</h3>
-  <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
+  <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter" [limit]="limit"></restaurant-table-component>
   
   <h3>Modo acordeón</h3>
 
@@ -23,5 +23,5 @@
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
   
-  <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>
+  <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order" [limit]="limit"></restaurant-accordion-component>
 </div>

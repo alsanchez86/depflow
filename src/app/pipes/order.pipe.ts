@@ -12,7 +12,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as _ from 'underscore';
 
 @Pipe({
-  name: 'order'
+  name: 'order',
+  pure: false
 })
 
 export class OrderPipe implements PipeTransform {
