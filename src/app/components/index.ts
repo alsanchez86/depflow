@@ -8,3 +8,4 @@ export * from './dropdown/dropdown.component';
 export * from './restaurant-accordion/restaurant-accordion.component';
 export * from './restaurant-properties/restaurant-properties.component';
 export * from './restaurant-table/restaurant-table.component';
+export * from './pagination/pagination.component';

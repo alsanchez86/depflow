@@ -1,9 +1,6 @@
 // Basic imports
 import { Component, ElementRef, Input } from '@angular/core';
 
-// Extra imports
-import * as _ from 'underscore';
-
 // nexter
 let next = 0;
 
@@ -29,9 +26,7 @@ export class AlertComponent {
 
   ngOnInit(){    
     if (! this.visible) this.visible = false;
-    if (! this.type)    this.type = "info";
-
-    // _.each({one: 1, two: 2, three: 3}, console.log);
+    if (! this.type)    this.type = "info";    
   }
 
   public closeAlert (): void{

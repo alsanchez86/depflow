@@ -33,6 +33,9 @@ export class RestaurantListLayout {
   public order: object;  
   public limit: object;  
   public switchOn: boolean; 
+  public paginationLenght: number;
+  public maxPageSize: number;
+  public initPage: number;
   // public selectedRestaurant: Restaurant;
 
   constructor(
@@ -43,7 +46,7 @@ export class RestaurantListLayout {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
-  ngOnInit(){
+  ngOnInit(){   
     // filters
     this.filters = [
       {
@@ -132,16 +135,19 @@ export class RestaurantListLayout {
         orderly: false,
         order: 0
       }
-    ];
+    ];    
     
     /* init */    
+    this.restaurants  = [];
     this.activeFilter = this.getActiveFilter();    
     this.order        = this.getActiveOrder();   
     this.limit        = this.getActiveLimit();
     this.switchOn     = false;    
+    this.maxPageSize  = 5;
+    this.initPage     = 1;
 
     this.toggleSwitch();
-    this.getRestaurants(); 
+    this.getRestaurants();        
   }
   
   /* filter */

@@ -30,6 +30,13 @@
     }
   }
 
+  .pagination-component-content {
+    display: flex;    
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end; 
+  }
+
   @include media-breakpoint-only(xs) {
     div.filter-zone {
       flex-direction: column;
