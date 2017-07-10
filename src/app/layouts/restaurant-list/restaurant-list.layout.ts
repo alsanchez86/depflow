@@ -113,7 +113,7 @@ export class RestaurantListLayout {
       {
         name: "_source.Id",
         orderly: true,
-        order: 0
+        order: 1
       },
       {
         name: "_type",
