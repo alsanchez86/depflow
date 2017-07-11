@@ -14,20 +14,33 @@ import * as _ from 'underscore';
 })
 
 export class LimitPipe implements PipeTransform {
-  private limited: any[];
+  private between: any[];
 
   transform(
     items: any[],
-    limit: any
+    init: number,
+    limit: number
   ): any[] {
-    this.limited = [];
+    this.between = [];
 
-    _.each (items, (value, key) => {     
-      if (key < limit.value){       
-        this.limited.push(value);
-      }
+    _.each (items, (value, key) => {
+      if (init && limit){
+        if (key >= init && key < limit){       
+          this.between.push(value);
+        }
+
+      }else if (init){
+        if (key >= init){       
+          this.between.push(value);
+        }
+
+      }else if (limit){
+        if (key < limit){       
+          this.between.push(value);
+        }
+      }      
     });
 
-    return this.limited;        
+    return this.between;        
   }
 }

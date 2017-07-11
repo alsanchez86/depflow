@@ -24,7 +24,7 @@
 
         <tbody>
             <!-- restaurant -->
-            <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order | filter:'_source.freeTables':filter.value | limit:limit; let i = index;">
+            <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order | filter:'_source.freeTables':filter.value | limit:init:limit; let i = index;">
                 <td scope="row">
                     {{ i + 1 }}
                 </td>

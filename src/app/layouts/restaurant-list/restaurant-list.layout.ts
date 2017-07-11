@@ -35,7 +35,7 @@ export class RestaurantListLayout {
   public switchOn: boolean; 
   public paginationLenght: number;
   public maxPages: number;
-  public initPage: number;
+  public currentPage: number;
   // public selectedRestaurant: Restaurant;
 
   constructor(
@@ -144,7 +144,7 @@ export class RestaurantListLayout {
     this.limit        = this.getActiveLimit();
     this.switchOn     = false;    
     this.maxPages     = 5;
-    this.initPage     = 1;
+    this.currentPage  = 1;
 
     this.toggleSwitch();
     this.getRestaurants();        
@@ -205,8 +205,8 @@ export class RestaurantListLayout {
   }
 
   /* page */
-  public setPage(): void {
-    
+  public setPage(option): void {
+    this.currentPage = option;
   }
 
   /* get Restaurants from API */
