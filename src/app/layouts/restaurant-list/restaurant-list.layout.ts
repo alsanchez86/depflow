@@ -34,7 +34,7 @@ export class RestaurantListLayout {
   public limit: object;  
   public switchOn: boolean; 
   public paginationLenght: number;
-  public maxPageSize: number;
+  public maxPages: number;
   public initPage: number;
   // public selectedRestaurant: Restaurant;
 
@@ -65,13 +65,13 @@ export class RestaurantListLayout {
         value: 1,
         text: "1 Mesa",
         render: true,
-        active: false
+        active: true
       },
       {
         value: 2,
         text: "2 Mesas",
         render: true,
-        active: true
+        active: false
       }
     ];
 
@@ -143,7 +143,7 @@ export class RestaurantListLayout {
     this.order        = this.getActiveOrder();   
     this.limit        = this.getActiveLimit();
     this.switchOn     = false;    
-    this.maxPageSize  = 5;
+    this.maxPages     = 5;
     this.initPage     = 1;
 
     this.toggleSwitch();
@@ -202,6 +202,11 @@ export class RestaurantListLayout {
     }else{
       this.filter = this.getActiveFilter(false);
     }
+  }
+
+  /* page */
+  public setPage(): void {
+    
   }
 
   /* get Restaurants from API */

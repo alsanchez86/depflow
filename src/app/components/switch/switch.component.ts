@@ -12,7 +12,7 @@ let next = 0;
 
 export class SwitchComponent {
   @Input() checked;
-  @Output() action = new EventEmitter();
+  @Output() action = new EventEmitter<boolean>();
 
   public id: string;
 
@@ -26,7 +26,7 @@ export class SwitchComponent {
     this.checked = false;
   }
 
-  click(): void {
+  public click(): void {
     this.checked = !this.checked;
     this.action.emit(this.checked);
   }

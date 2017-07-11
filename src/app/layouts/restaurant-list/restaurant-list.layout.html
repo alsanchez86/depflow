@@ -18,8 +18,8 @@
   <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter" [limit]="limit"></restaurant-table-component>
 
   <div class="pagination-component-content">
-    <pagination-component [length]="restaurants.length" [pageSize]="limit" [maxSize]="maxPageSize" [initPage]="initPage"></pagination-component>
-  </div>  
+    <pagination-component (output)="setPage($event)" [length]="restaurants.length" [pageSize]="limit.value" [maxSize]="maxPages" [initPage]="initPage"></pagination-component>
+  </div>    
   
   <h3>Modo acordeón</h3>
 

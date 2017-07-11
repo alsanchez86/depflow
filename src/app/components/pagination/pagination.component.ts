@@ -1,5 +1,5 @@
 // Basic imports
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -18,6 +18,7 @@ export class PaginationComponent {
   @Input() pageSize: number;  
   @Input() maxSize: number;  
   @Input() initPage: number;
+  @Output() output = new EventEmitter<number>();
 
   public id: string;
   public page: number;  
@@ -31,5 +32,9 @@ export class PaginationComponent {
 
   ngOnInit(){    
     this.page = this.initPage;
+  }
+
+  public change(event): void {    
+    this.output.emit(event);
   }
 }

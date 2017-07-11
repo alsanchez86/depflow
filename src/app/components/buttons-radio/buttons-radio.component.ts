@@ -13,7 +13,7 @@ let next = 0;
 export class ButtonsRadioComponent {
   @Input() active;
   @Input() options;
-  @Output() action = new EventEmitter();
+  @Output() action = new EventEmitter<object>();
 
   public id: string;
 
@@ -24,7 +24,7 @@ export class ButtonsRadioComponent {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
-  click (option): void {    
+  public click (option): void {    
     this.action.emit(option);
   }
 }
