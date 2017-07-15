@@ -17,7 +17,7 @@ export class RestaurantAccordionComponent {
   @Input() restaurants: Restaurant[];
   @Input() order: object;
   @Input() filter: object;  
-  @Input() limit: object;  
+  // @Input() limit: object;  
 
   public id: string;
 

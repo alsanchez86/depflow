@@ -2,7 +2,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 
 // Classes
-import { Restaurant } from '../../classes';
+import { Observable } from 'rxjs/Observable';
+import { Restaurant } from '../../classes'; 
 
 // Services
 import { RestaurantService } from '../../services';
@@ -23,6 +24,7 @@ export class RestaurantListLayout {
   public id: string;
 
   public restaurants: Restaurant[];
+  public restaurantsObservable: Observable<Restaurant[]>;
   private filters: object[]; 
   private orders: object[];
   private limits: object[];
@@ -65,13 +67,13 @@ export class RestaurantListLayout {
         value: 1,
         text: "1 Mesa",
         render: true,
-        active: true
+        active: false
       },
       {
         value: 2,
         text: "2 Mesas",
         render: true,
-        active: false
+        active: true
       }
     ];
 
@@ -138,7 +140,7 @@ export class RestaurantListLayout {
     ];    
     
     /* init */    
-    this.restaurants  = [];
+    this.restaurants  = [];        
     this.activeFilter = this.getActiveFilter();    
     this.order        = this.getActiveOrder();   
     this.limit        = this.getActiveLimit();
@@ -147,7 +149,33 @@ export class RestaurantListLayout {
     this.currentPage  = 1;
 
     this.toggleSwitch();
-    this.getRestaurants();        
+    this.getRestaurantsRsJX();     
+
+    // debugger;  
+    // this.restaurantsLimited = this.restaurants; // se tiene que hacer con un observable, ya que la llamada http se produce a posteriori. Luego, hay que llamar al pipe limited 
+    // https://codekstudio.com/post-blog/conceptos-observables-rxjs-y-angular-2-javascript-reactivo-y-funcional/57d1e2840897131b5ec54b90
+    // http://blog.rangle.io/observables-and-reactive-programming-in-angular-2/
+    // https://stackoverflow.com/questions/39494058/angular-2-behavior-subject-vs-observable
+
+    this.restaurantsObservable = new Observable(observer => {      
+      observer.next(42);      
+    });
+
+    /*  
+    this.restaurantsObservable.subscribe(
+          value => this.values.push(value),
+          error => this.anyErrors = true,
+          () => this.finished = true
+      );
+    
+    
+    Rx.Observable
+      .from(this.restaurants)
+      .map(function(elementoArray) { 
+        // aquí va el pipe limit
+        // return elementoArray + 2;
+      }); 
+    */    
   }
   
   /* filter */
@@ -210,9 +238,19 @@ export class RestaurantListLayout {
   }
 
   /* get Restaurants from API */
-  private getRestaurants(): void {
+  private getRestaurants(): void {       
     this.restaurantService
       .getAll()
-      .then(data => this.restaurants = data);
+      .then(data => {      
+        this.restaurants = data;
+      });    
+  }
+
+  private getRestaurantsRsJX(): void {
+    this.restaurantService
+      .getAllRsJX()
+      .subscribe(res => {            
+        this.restaurants = res.json().data;
+      });    
   }
 }

@@ -106,7 +106,7 @@ import {
     KeysPipe,
     LimitPipe
   ],
-  providers: [
+  providers: [    
     RestaurantService
   ],
   bootstrap: [AppComponent]
