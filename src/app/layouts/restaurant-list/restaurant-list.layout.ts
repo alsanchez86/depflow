@@ -1,12 +1,14 @@
 // Basics
 import { Component, ElementRef, OnInit } from '@angular/core';
 
-// Classes
-import { Observable } from 'rxjs/Observable';
-import { Restaurant } from '../../classes'; 
-
 // Services
 import { RestaurantService } from '../../services';
+
+// Classes
+import { Restaurant } from '../../classes'; 
+
+// Pipes
+import { LimitPipe } from '../../pipes';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -17,14 +19,15 @@ let next = 0;
 @Component({
   selector: 'restaurant-list-layout',
   templateUrl: './restaurant-list.layout.html',
-  styleUrls: ['./restaurant-list.layout.scss']
+  styleUrls: ['./restaurant-list.layout.scss'],
+  providers: [RestaurantService, LimitPipe]
 })
 
 export class RestaurantListLayout {
   public id: string;
 
-  public restaurants: Restaurant[];
-  public restaurantsObservable: Observable<Restaurant[]>;
+  public restaurants: Restaurant[];  
+
   private filters: object[]; 
   private orders: object[];
   private limits: object[];
@@ -42,7 +45,8 @@ export class RestaurantListLayout {
 
   constructor(
     private elem: ElementRef,
-    private restaurantService: RestaurantService
+    private restaurantService: RestaurantService,
+    private limitPipe: LimitPipe
   ){
     // id
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
@@ -150,32 +154,6 @@ export class RestaurantListLayout {
 
     this.toggleSwitch();
     this.getRestaurantsRsJX();     
-
-    // debugger;  
-    // this.restaurantsLimited = this.restaurants; // se tiene que hacer con un observable, ya que la llamada http se produce a posteriori. Luego, hay que llamar al pipe limited 
-    // https://codekstudio.com/post-blog/conceptos-observables-rxjs-y-angular-2-javascript-reactivo-y-funcional/57d1e2840897131b5ec54b90
-    // http://blog.rangle.io/observables-and-reactive-programming-in-angular-2/
-    // https://stackoverflow.com/questions/39494058/angular-2-behavior-subject-vs-observable
-
-    this.restaurantsObservable = new Observable(observer => {      
-      observer.next(42);      
-    });
-
-    /*  
-    this.restaurantsObservable.subscribe(
-          value => this.values.push(value),
-          error => this.anyErrors = true,
-          () => this.finished = true
-      );
-    
-    
-    Rx.Observable
-      .from(this.restaurants)
-      .map(function(elementoArray) { 
-        // aquí va el pipe limit
-        // return elementoArray + 2;
-      }); 
-    */    
   }
   
   /* filter */
@@ -225,11 +203,7 @@ export class RestaurantListLayout {
   }
 
   private toggleSwitch(): void {
-    if (this.switchOn){
-      this.filter = this.activeFilter;
-    }else{
-      this.filter = this.getActiveFilter(false);
-    }
+    this.filter = this.switchOn ? this.activeFilter : this.getActiveFilter(false);
   }
 
   /* page */
@@ -237,20 +211,23 @@ export class RestaurantListLayout {
     this.currentPage = option;
   }
 
-  /* get Restaurants from API */
+  /* get Restaurants from API */  
   private getRestaurants(): void {       
     this.restaurantService
       .getAll()
       .then(data => {      
         this.restaurants = data;
       });    
-  }
+  }  
 
   private getRestaurantsRsJX(): void {
     this.restaurantService
-      .getAllRsJX()
-      .subscribe(res => {            
-        this.restaurants = res.json().data;
-      });    
+      .getAllRsJX()    
+      .subscribe(response => {           
+        // this.restaurants = response;
+
+        // aplicar pipe en la lógica
+        this.restaurants = this.limitPipe.transform(response, 0, 5);
+      });
   }
 }

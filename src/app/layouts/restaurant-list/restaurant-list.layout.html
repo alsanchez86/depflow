@@ -16,7 +16,7 @@
 
   <h3>Modo tabla</h3>
 
-  <restaurant-table-component [restaurants]="restaurantsLimited" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
+  <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
 
   <div class="pagination-component-content">
     <pagination-component (output)="setPage($event)" [length]="restaurants.length" [pageSize]="limit.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
@@ -28,5 +28,5 @@
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
   
-  <restaurant-accordion-component [restaurants]="restaurantsLimited" [filter]="filter" [order]="order"></restaurant-accordion-component>
+  <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>
 </div>

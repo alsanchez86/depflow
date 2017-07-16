@@ -2,12 +2,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
-// Classes
+// Promises and Observables
 import { Observable } from 'rxjs/Observable';
-import { Restaurant } from '../../classes';
 
-// Promises
+// Observable operators
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+
+// Classes
+import { Restaurant } from '../../classes';
 
 @Injectable()
 
@@ -30,9 +33,10 @@ export class RestaurantService {
       .catch(this.handleError);
   }
   
-  public getAllRsJX(): Observable<Response>{
+  public getAllRsJX(): Observable<Restaurant[]>{
     return this.http
-      .get(this.restaurantsUrl);
+      .get(this.restaurantsUrl, this.options)
+      .map(response => response.json().data as Restaurant[]);
   }  
 
   private handleError(error: any): Promise<any> {
