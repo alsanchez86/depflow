@@ -11,8 +11,9 @@ let next = 0;
 })
 
 export class DropdownComponent {
-  @Input() active;
-  @Input() options;
+  @Input() active: object;
+  @Input() options: object;
+  @Input() length: number;
   @Output() action = new EventEmitter<object>();
 
   public id: string;

@@ -11,8 +11,8 @@ let next = 0;
 })
 
 export class ButtonsRadioComponent {
-  @Input() active;
-  @Input() options;
+  @Input() active: object;
+  @Input() options: object;
   @Output() action = new EventEmitter<object>();
 
   public id: string;

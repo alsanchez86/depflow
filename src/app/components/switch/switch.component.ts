@@ -11,7 +11,7 @@ let next = 0;
 })
 
 export class SwitchComponent {
-  @Input() checked;
+  @Input() checked: boolean;
   @Output() action = new EventEmitter<boolean>();
 
   public id: string;

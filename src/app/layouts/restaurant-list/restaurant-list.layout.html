@@ -20,16 +20,14 @@
   <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>
 
   <div class="pagination-component-content">
-    <pagination-component (output)="setPage($event)" [length]="restaurants.length" [pageSize]="pageSize.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
-  </div>    
+    <pagination-component (output)="setPage($event)" [length]="restaurantsLength" [pageSize]="pageSize.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
+  </div>      
   
-  <!--
   <h3>Modo acordeón</h3>
 
   <div class="filter-zone filter-zone_2">
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
   
-  <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>
-  -->
+  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component>  
 </div>

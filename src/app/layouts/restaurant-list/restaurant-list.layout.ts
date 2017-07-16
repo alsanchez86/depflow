@@ -33,6 +33,7 @@ export class RestaurantListLayout {
 
   public restaurants: Restaurant[];  
   public restaurantsPiped: Restaurant[];  
+  public restaurantsLength: number;
 
   private filters: object[]; 
   private orders: object[];
@@ -105,18 +106,23 @@ export class RestaurantListLayout {
     // limits
     this.pageSizes = [
       {
-        value: 2,    
-        text: "Muestra 2",
+        value: 1,    
+        text: "Muestra 1",
         active: true
       },
       {
-        value: 5,        
-        text: "Muestra 5",
+        value: 2,        
+        text: "Muestra 2",
         active: false
       },
       {
-        value: 10,        
-        text: "Muestra 10",
+        value: 3,        
+        text: "Muestra 3",
+        active: false
+      },
+      {
+        value: 4,        
+        text: "Muestra 4",
         active: false
       }
     ];
@@ -168,7 +174,7 @@ export class RestaurantListLayout {
   public setFilter(option): void {        
     this.activeFilter = option;    
     this.toggleSwitch();
-    this.applyPipes(this.restaurants);
+    this.applyPipes();
   }
 
   private getActiveFilter(active = true): object {
@@ -195,7 +201,7 @@ export class RestaurantListLayout {
   /* limit */
   public setPageSize(option): void {
     this.pageSize = option;
-    this.applyPipes(this.restaurants);
+    this.applyPipes();
   }
 
   private getActiveLimit(): object {
@@ -210,7 +216,7 @@ export class RestaurantListLayout {
   public setSwitch (event): void {   
     this.switchOn = event;
     this.toggleSwitch();
-    this.applyPipes(this.restaurants);
+    this.applyPipes();
   }
 
   private toggleSwitch(): void {
@@ -220,19 +226,23 @@ export class RestaurantListLayout {
   /* page */
   public setPage(option): void {
     this.currentPage = option;
-    this.applyPipes(this.restaurants);
+    this.applyPipes();
   }
 
   /* Pipes */
-  private applyPipes(restaurants: Restaurant[]): void {      
-    this.restaurantsPiped = this.paginationPipe();      
-    // this.restaurantsPiped = this.filterPipe.transform(this.restaurants, '_source.freeTables', this.filter.value);    
+  private applyPipes(): void {      
+    // 1.- filter
+    this.restaurantsPiped   = this.filterPipe.transform(this.restaurants, '_source.freeTables', this.filter.value);    
+    this.restaurantsLength  = this.restaurantsPiped.length;
+
+    // 2.- limit (pagination)
+    this.restaurantsPiped   = this.paginationPipe(this.restaurantsPiped);          
   }
 
-  private paginationPipe(): Restaurant[] {
+  private paginationPipe(restaurants: Restaurant[]): Restaurant[] {    
     let init  = (this.currentPage - 1) * this.pageSize.value;
     let limit = init + this.pageSize.value - 1;    
-    return this.limitPipe.transform(this.restaurants, init, limit);
+    return this.limitPipe.transform(restaurants, init, limit);
   }
 
   /* get Restaurants from API */  
@@ -249,7 +259,7 @@ export class RestaurantListLayout {
       .getAllRsJX()    
       .subscribe(response => {           
         this.restaurants = response;
-        this.applyPipes(this.restaurants);
+        this.applyPipes();
       });
   }
 }
