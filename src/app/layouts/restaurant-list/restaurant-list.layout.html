@@ -6,22 +6,24 @@
   <div class="filter-zone">
     <div class="switch-button-radio">
       <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>            
+      
       <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>   
     </div> 
 
-    <dropdown-component (action)="setLimit($event)" [options]="limits" [active]="limit"></dropdown-component>
+    <dropdown-component (action)="setPageSize($event)" [options]="pageSizes" [active]="pageSize"></dropdown-component>
   </div>  
 
   <h2>Lista de restaurantes</h2>
 
   <h3>Modo tabla</h3>
 
-  <restaurant-table-component [restaurants]="restaurants" [fields]="tableFields" [filter]="filter"></restaurant-table-component>
+  <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>
 
   <div class="pagination-component-content">
-    <pagination-component (output)="setPage($event)" [length]="restaurants.length" [pageSize]="limit.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
+    <pagination-component (output)="setPage($event)" [length]="restaurants.length" [pageSize]="pageSize.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
   </div>    
   
+  <!--
   <h3>Modo acordeón</h3>
 
   <div class="filter-zone filter-zone_2">
@@ -29,4 +31,5 @@
   </div>
   
   <restaurant-accordion-component [restaurants]="restaurants" [filter]="filter" [order]="order"></restaurant-accordion-component>
+  -->
 </div>

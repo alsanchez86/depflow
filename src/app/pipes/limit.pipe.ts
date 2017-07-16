@@ -18,24 +18,24 @@ export class LimitPipe implements PipeTransform {
 
   transform(
     items: any[],
-    init: number,
-    limit: number
+    init: number = 0,
+    limit: number = items.length - 1
   ): any[] {
-    this.between = [];
+    this.between  = [];        
 
-    _.each (items, (value, key) => {
-      if (init && limit){
-        if (key >= init && key < limit){       
+    _.each (items, (value, key) => {      
+      if (init !== null && limit !== null){
+        if (key >= init && key <= limit){       
           this.between.push(value);
         }
 
-      }else if (init){
+      }else if (init !== null){
         if (key >= init){       
           this.between.push(value);
         }
 
-      }else if (limit){
-        if (key < limit){       
+      }else if (limit !== null){
+        if (key <= limit){       
           this.between.push(value);
         }
       }      

@@ -6,7 +6,7 @@
                 <th>#</th>
 
                 <th *ngFor="let field of fields; let i = index;">       
-                    <a href="#" *ngIf="field.orderly; else elseBlock" (click)="order($event, field)">
+                    <a href="#" *ngIf="field.orderly; else elseBlock" (click)="setOrder($event, field)">
                         {{ field.name }}                                            
                         
                         <i *ngIf="(field.name == activeOrder.name) && !activeOrder.order" class="fa fa-sort-down" aria-hidden="true"></i>
@@ -23,8 +23,8 @@
         </thead>
 
         <tbody>
-            <!-- restaurant -->
-            <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order | filter:'_source.freeTables':filter.value; let i = index;">
+            <!-- restaurant -->            
+            <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order; let i = index;">
                 <td scope="row">
                     {{ i + 1 }}
                 </td>

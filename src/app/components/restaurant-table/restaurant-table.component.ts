@@ -23,7 +23,7 @@ let next = 0;
 export class RestaurantTableComponent {
   @Input() restaurants: Restaurant[];
   @Input() fields: object[];  
-  @Input() filter: object;
+  // @Input() filter: object;
   // @Input() init: number;
   // @Input() limit: number;
 
@@ -41,7 +41,7 @@ export class RestaurantTableComponent {
     this.activeOrder = this.getActiveOrder();
   }
 
-  public order(event, field): void {    
+  public setOrder(event, field): void {    
     event.preventDefault();
 
     this.activeOrder = field;
