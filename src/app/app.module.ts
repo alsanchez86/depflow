@@ -28,7 +28,8 @@ import {
   RestaurantAccordionComponent,
   RestaurantPropertiesComponent,
   RestaurantTableComponent,
-  PaginationComponent
+  PaginationComponent,
+  TabComponent
 } from './components';
 
 // Layouts
@@ -89,6 +90,7 @@ import {
     RestaurantPropertiesComponent,
     RestaurantTableComponent,
     PaginationComponent,
+    TabComponent,
 
     // layouts
     HeaderLayout,

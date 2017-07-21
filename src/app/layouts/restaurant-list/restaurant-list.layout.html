@@ -17,11 +17,11 @@
 
   <h3>Modo tabla</h3>
 
-  <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>
-
   <div class="pagination-component-content">
     <pagination-component (output)="setPage($event)" [length]="restaurantsLength" [pageSize]="pageSize.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
-  </div>      
+  </div>
+
+  <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>        
   
   <h3>Modo acordeón</h3>
 
@@ -29,5 +29,10 @@
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
   
-  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component>  
+  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component> 
+
+  <br>
+  <h3>Modo tabs</h3>
+
+  <tab-component></tab-component> 
 </div>

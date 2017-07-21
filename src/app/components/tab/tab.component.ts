@@ -1,5 +1,5 @@
 // Basic imports
-import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 // nexter
 let next = 0;
@@ -10,10 +10,7 @@ let next = 0;
   styleUrls: ['./tab.component.scss']
 })
 
-export class SwitchComponent {
-  @Input() checked: boolean;
-  @Output() action = new EventEmitter<boolean>();
-
+export class TabComponent {    
   public id: string;
 
   constructor(
