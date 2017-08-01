@@ -10,3 +10,4 @@ export * from './restaurant-properties/restaurant-properties.component';
 export * from './restaurant-table/restaurant-table.component';
 export * from './pagination/pagination.component';
 export * from './tab/tab.component';
+export * from './map/map.component';

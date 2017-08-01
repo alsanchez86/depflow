@@ -29,7 +29,8 @@ import {
   RestaurantPropertiesComponent,
   RestaurantTableComponent,
   PaginationComponent,
-  TabComponent
+  TabComponent,
+  MapComponent
 } from './components';
 
 // Layouts
@@ -91,6 +92,7 @@ import {
     RestaurantTableComponent,
     PaginationComponent,
     TabComponent,
+    MapComponent,
 
     // layouts
     HeaderLayout,

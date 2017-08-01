@@ -23,8 +23,9 @@
       ],
       "scripts": [
         {"input": "../node_modules/jquery/jquery.min.js"},
-        {"input": "../node_modules/owl.carousel/dist/owl.carousel.min.js"},
-        {"input": "../node_modules/underscore/underscore.js"}
+        {"input": "../node_modules/underscore/underscore.js"},
+        {"input": "../node_modules/owl.carousel/dist/owl.carousel.min.js"},        
+        {"input": "../node_modules/leaflet/dist/leaflet.js"}
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

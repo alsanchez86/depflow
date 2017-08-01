@@ -1,7 +1,7 @@
 @import "../../../styles/basics";
 
 :host /deep/ {
-    .tab-content {
-        padding: 1rem;
+    .leaflet-map { 
+        height: 180px; 
     }
 }
