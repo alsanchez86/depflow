@@ -1,6 +1,16 @@
 <div id="{{ id }}" class="{{ id }}">  
   <h1>Restaurantes</h1>
 
+  <br>
+  <h2>Length:</h2>
+
+  <p>
+    Original: {{ restaurants.length }}
+    <br>
+    Piped: {{ restaurantsPiped.length }}
+  </p>
+
+  <br>
   <h2>Filtros</h2>  
 
   <div class="filter-zone">
@@ -14,7 +24,12 @@
   </div>  
 
   <h2>Lista de restaurantes</h2>
+  
+  <h3>Leaflet map</h3>
+  
+  <map-component [restaurants]="restaurantsPiped"></map-component>
 
+  <br>
   <h3>Modo tabla</h3>
 
   <div class="pagination-component-content">
@@ -34,10 +49,5 @@
   <br>
   <h3>Modo tabs</h3>
 
-  <tab-component></tab-component> 
-
-  <br>
-  <h3>Leaflet map</h3>
-  
-  <map-component [restaurants]="restaurantsPiped"></map-component>
+  <tab-component></tab-component>   
 </div>

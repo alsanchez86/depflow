@@ -108,7 +108,7 @@ export class RestaurantListLayout {
       {
         value: 1,    
         text: "Muestra 1",
-        active: true
+        active: false
       },
       {
         value: 2,        
@@ -118,7 +118,7 @@ export class RestaurantListLayout {
       {
         value: 3,        
         text: "Muestra 3",
-        active: false
+        active: true
       },
       {
         value: 4,        
@@ -162,7 +162,7 @@ export class RestaurantListLayout {
     this.activeFilter       = this.getActiveFilter();    
     this.order              = this.getActiveOrder();   
     this.pageSize           = this.getActiveLimit();
-    this.switchOn           = true;    
+    this.switchOn           = false;    
     this.maxPages           = 5;
     this.currentPage        = 1;
 

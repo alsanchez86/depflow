@@ -31,7 +31,7 @@ export class RestaurantsData implements InMemoryDbService {
             "avg_rate":10,
             "description":"En pleno centro de Madrid, próximo a la plaza del Rey, se sitúa este multifacético restaurante. Alvacío Gastronomía es un lugar moderno y original que sabrá entregar el marco ideal para que disfrutes en compañía de tus amigos. Su comedor está emplazado en la cocina donde se elaboran los platos, así podrás tener una relación directa y espontánea con todo el proceso culinario. \r\n\r\nSu carta se especializa en recetas de mercado, y tiene entre sus platos más recomendados la carrillera de ternera y el risotto de boletus edulis y parmesano. Además dispone de menús con una interesante selección de platos.\r\n\r\nSi buscas una salida gastronómica diferente y divertida no dudes en visitarles. Todo el encanto y calidez de su personal te espera para que vivas excelentes momentos.",
             "freeTables":1,
-            "locale":"40.421163375734,-3.6967000961304",
+            "locale":"39.421163375734,-3.6967000961304",
             "name":"Alvacío Gastronomía",
             "phone":"34-915225056",
             "speciality":"De mercado"
@@ -48,7 +48,7 @@ export class RestaurantsData implements InMemoryDbService {
              "avg_rate":10,
              "description":"EXXXXXXXXXXXXcío Gastronomía es un lugar moderno y original que sabrá entregar el marco ideal para que disfrutes en compañía de tus amigos. Su comedor está emplazado en la cocina donde se elaboran los platos, así podrás tener una relación directa y espontánea con todo el proceso culinario. \r\n\r\nSu carta se especializa en recetas de mercado, y tiene entre sus platos más recomendados la carrillera de ternera y el risotto de boletus edulis y parmesano. Además dispone de menús con una interesante selección de platos.\r\n\r\nSi buscas una salida gastronómica diferente y divertida no dudes en visitarles. Todo el encanto y calidez de su personal te espera para que vivas excelentes momentos.",
              "freeTables":2,
-             "locale":"40.421163375734,-3.6967000961304",
+             "locale":"40.421163375734,-3.0967000961304",
              "name":"BarHa",
              "phone":"34-915225056",
              "speciality":"De mercado"
