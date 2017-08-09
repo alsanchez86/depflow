@@ -1,5 +1,7 @@
 <div id="{{ id }}" class="{{ id }}">  
-  <h1>Restaurantes</h1>
+  <h1>
+    {{ 'Restaurantes' | language:'en' }}    
+  </h1>
 
   <br>
   <h2>Length:</h2>
@@ -38,13 +40,15 @@
 
   <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>        
   
+  <!-- 
   <h3>Modo acordeón</h3>
 
   <div class="filter-zone filter-zone_2">
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
   
-  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component> 
+  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component>
+  -->
 
   <br>
   <h3>Modo tabs</h3>

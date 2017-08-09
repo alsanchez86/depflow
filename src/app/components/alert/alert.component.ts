@@ -24,12 +24,12 @@ export class AlertComponent {
     this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
   }
 
-  ngOnInit(){    
+  ngOnInit() {    
     if (! this.visible) this.visible = false;
     if (! this.type)    this.type = "info";    
   }
 
-  public closeAlert (): void{
+  public closeAlert (): void {
     this.visible = false;
   }
 }

@@ -49,11 +49,14 @@ import {
 
 // Services
 import {
-  RestaurantService
+  RestaurantService,
+  LanguageService
 } from './services/';
 
 // Imports for loading & configuring the in-memory web api
 import {
+  EsLanguageData,
+  EnLanguageData,
   RestaurantsData
 } from './data/';
 
@@ -62,7 +65,8 @@ import {
   OrderPipe,
   FilterPipe,
   KeysPipe,
-  LimitPipe
+  LimitPipe,
+  LanguagePipe
 } from './pipes/';
 
 // Meta Decorator
@@ -71,6 +75,8 @@ import {
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(EsLanguageData),
+    InMemoryWebApiModule.forRoot(EnLanguageData),
     InMemoryWebApiModule.forRoot(RestaurantsData),
     AppRoutingModule,
     NgbModule.forRoot()
@@ -108,10 +114,12 @@ import {
     OrderPipe,
     FilterPipe,
     KeysPipe,
-    LimitPipe
+    LimitPipe,
+    LanguagePipe
   ],
   providers: [    
-    RestaurantService
+    RestaurantService,
+    LanguageService
   ],
   bootstrap: [AppComponent]
 })

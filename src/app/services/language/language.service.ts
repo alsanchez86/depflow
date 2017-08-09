@@ -6,16 +6,13 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 // Observable operators
+// import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
-
-// Classes
-import { Restaurant } from '../../classes';
 
 @Injectable()
 
-export class RestaurantService {
-  private endPoint  = 'api/restaurants'; // URL to fake web api. restaurants is the name of the variable in RestaurantsData
+export class LanguageService {
+  private endPoint  = 'api/en';
   private headers   = new Headers ({'Content-Type': 'application/json'});
   private options   = new RequestOptions({ headers: this.headers }); 
 
@@ -24,19 +21,21 @@ export class RestaurantService {
   ){
 
   }
-
-  public getAll(): Promise<Restaurant[]> {  
+  
+  public getText(text): Promise<string> {  
     return this.http
       .get(this.endPoint, this.options)
       .toPromise()
-      .then(response => response.json().data as Restaurant[])
+      .then(response => response.json().data as string)
       .catch(this.handleError);
-  }
+  }  
   
-  public getAllRsJX(): Observable<Restaurant[]>{
+  public getTextRsJX(text): Observable<string>{
+    debugger;
+
     return this.http
       .get(this.endPoint, this.options)
-      .map(response => response.json().data as Restaurant[]);
+      .map(response => response.json().data as string);
   }  
 
   private handleError(error: any): Promise<any> {

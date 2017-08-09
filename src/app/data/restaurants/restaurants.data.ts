@@ -73,6 +73,7 @@ export class RestaurantsData implements InMemoryDbService {
           "fields":null
         }
     ];
-    return { restaurants };
+      
+    return {restaurants};
   }
 }
