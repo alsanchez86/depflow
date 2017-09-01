@@ -22,8 +22,8 @@
         "styles/_main.scss"
       ],
       "scripts": [
-        {"input": "../node_modules/jquery/jquery.min.js"},
-        {"input": "../node_modules/underscore/underscore.js"},
+        {"input": "../node_modules/jquery/dist/jquery.min.js"},
+        {"input": "../node_modules/underscore/underscore-min.js"},
         {"input": "../node_modules/owl.carousel/dist/owl.carousel.min.js"},        
         {"input": "../node_modules/leaflet/dist/leaflet.js"}
       ],
