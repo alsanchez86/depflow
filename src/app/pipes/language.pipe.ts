@@ -30,16 +30,18 @@ export class LanguagePipe implements PipeTransform {
     this.getText(text);
     return this.text;    
   }
-
-  /*
+  
   private getText(text): void {       
+    return text;
+
+    /*
     this.languageService
       .getText(text)
       .then(data => {      
         this.text = data;
       });    
+    */
   }  
-  */
 
   private getLanguageRsJX(text): void {
     this.languageService
