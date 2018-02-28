@@ -4,15 +4,15 @@ export class Restaurant {
   _id: string;
   _score: number;
   _source: {
-     Id: string,
-     avg_rate: number,
-     description: string,
-     freeTables: number,
-     hour_open: string,
-     locale: string,
-     name: string,
-     phone: string,
-     speciality: string
+    Id: string,
+    avg_rate: number,
+    description: string,
+    freeTables: number,
+    hour_open: string,
+    locale: string,
+    name: string,
+    phone: string,
+    speciality: string
   };
   fields: null;
 }

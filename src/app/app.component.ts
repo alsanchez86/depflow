@@ -1,5 +1,8 @@
 // Basic imports
-import { Component, ElementRef } from '@angular/core';
+import {
+  Component,
+  ElementRef
+} from '@angular/core';
 
 // declare var jQuery:any;
 
@@ -14,7 +17,7 @@ import { Component, ElementRef } from '@angular/core';
 export class AppComponent {
   constructor(
     private el: ElementRef
-  ){
+  ) {
 
   }
 

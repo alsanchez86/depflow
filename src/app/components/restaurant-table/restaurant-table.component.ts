@@ -3,10 +3,17 @@
 */
 
 // Basics
-import { Component, ElementRef, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Input
+} from '@angular/core';
 
 // Classes
-import { Restaurant } from '../../classes';
+import {
+  Restaurant
+} from '../../classes';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -22,23 +29,23 @@ let next = 0;
 
 export class RestaurantTableComponent {
   @Input() restaurants: Restaurant[];
-  @Input() fields: object[];  
+  @Input() fields: object[];
 
-  public id: string;    
+  public id: string;
   public activeOrder: any;
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.activeOrder = this.getActiveOrder();
   }
 
-  public setOrder(event, field): void {    
+  public setOrder(event, field): void {
     event.preventDefault();
 
     this.activeOrder = field;
@@ -54,19 +61,23 @@ export class RestaurantTableComponent {
   */
   private getActiveOrder(): object {
     return _.chain(this.fields)
-            .filter(function(option) { return option["orderly"]; })
-            .map(function(option){ return option; })
-            .first()
-            .value();
+      .filter(function (option) {
+        return option["orderly"];
+      })
+      .map(function (option) {
+        return option;
+      })
+      .first()
+      .value();
   }
 
   /*
     Obtiene el valor de una propiedad de Restaurant dado un string en nomenclatura JSON. Ej: _source.Id
   */
-  public getRestaurantFieldValue (restaurant:Restaurant, field): object {
-    let parts     = field.split(".");
-    let length    = parts.length;    
-    let property  = restaurant || this;
+  public getRestaurantFieldValue(restaurant: Restaurant, field): object {
+    let parts = field.split(".");
+    let length = parts.length;
+    let property = restaurant || this;
 
     for (let i = 0; i < length; i++) {
       property = property[parts[i]];

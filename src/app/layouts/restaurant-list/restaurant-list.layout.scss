@@ -1,46 +1,36 @@
 @import "../../../styles/basics";
-
 :host /deep/ {
   h5 {
     margin-bottom: 1rem;
     font-size: 1rem;
   }
-
   div.filter-zone {
-    display: flex;    
+    display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: flex-start;    
-
-    margin-bottom: 1.5rem;   
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
   }
-
   .switch-button-radio {
     // @include border(1px solid $primary-color-light, .4rem);
-    display: flex;    
+    display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: flex-start; 
-    margin-right: 1.5rem;
-
-    // background-color: $primary-color-light;
-
+    justify-content: flex-start;
+    margin-right: 1.5rem; // background-color: $primary-color-light;
     switch-component {
       margin: 0 1rem 0 1rem;
     }
   }
-
   .pagination-component-content {
-    display: flex;    
+    display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: flex-end; 
+    justify-content: flex-end;
   }
-
   @include media-breakpoint-only(xs) {
     div.filter-zone {
       flex-direction: column;
-
       switch-component,
       buttons-radio-component {
         margin-bottom: .8rem;

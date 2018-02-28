@@ -3,14 +3,17 @@
 */
 
 // Basic imports
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform
+} from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
 
 @Pipe({
-    name: 'limit',
-    pure: false
+  name: 'limit',
+  pure: false
 })
 
 export class LimitPipe implements PipeTransform {
@@ -21,26 +24,26 @@ export class LimitPipe implements PipeTransform {
     init: number = 0,
     limit: number = items.length - 1
   ): any[] {
-    this.between  = [];        
+    this.between = [];
 
-    _.each (items, (value, key) => {      
-      if (init !== null && limit !== null){
-        if (key >= init && key <= limit){       
+    _.each(items, (value, key) => {
+      if (init !== null && limit !== null) {
+        if (key >= init && key <= limit) {
           this.between.push(value);
         }
 
-      }else if (init !== null){
-        if (key >= init){       
+      } else if (init !== null) {
+        if (key >= init) {
           this.between.push(value);
         }
 
-      }else if (limit !== null){
-        if (key <= limit){       
+      } else if (limit !== null) {
+        if (key <= limit) {
           this.between.push(value);
         }
-      }      
+      }
     });
 
-    return this.between;        
+    return this.between;
   }
 }

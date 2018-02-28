@@ -1,10 +1,13 @@
 // Basic imports
-import { Component, ElementRef } from '@angular/core';
+import {
+  Component,
+  ElementRef
+} from '@angular/core';
 
 // nexter
 let next = 0;
 
-@Component({  
+@Component({
   selector: 'carousel-component',
   templateUrl: 'carousel.component.html',
   styleUrls: ['carousel.component.scss']
@@ -15,8 +18,8 @@ export class CarouselComponent {
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 }

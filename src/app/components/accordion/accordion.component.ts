@@ -1,5 +1,8 @@
 // Basic imports
-import { Component, ElementRef } from '@angular/core';
+import {
+  Component,
+  ElementRef
+} from '@angular/core';
 
 // nexter
 let next = 0;
@@ -15,8 +18,8 @@ export class AccordionComponent {
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 }

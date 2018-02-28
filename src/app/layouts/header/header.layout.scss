@@ -1,8 +1,6 @@
 @import "../../../styles/basics";
-
-:host /deep/ div.header-component {    
-    padding: 30px;
-
-    color: $white;
-    background-color: $primary-color-dark;
+:host /deep/ div.header-component {
+  padding: 30px;
+  color: $white;
+  background-color: $primary-color-dark;
 }

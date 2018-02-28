@@ -1,15 +1,29 @@
 // Modules
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import {
+  BrowserModule
+} from '@angular/platform-browser';
+import {
+  NgModule
+} from '@angular/core';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  HttpModule
+} from '@angular/http';
+import {
+  NgbModule
+} from '@ng-bootstrap/ng-bootstrap'
 
 // Routing
-import { AppRoutingModule } from './app.routing.module';
+import {
+  AppRoutingModule
+} from './app.routing.module';
 
 // In Memory
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {
+  InMemoryWebApiModule
+} from 'angular-in-memory-web-api';
 
 // Root Component
 import {
@@ -110,7 +124,7 @@ import {
     KeysPipe,
     LimitPipe
   ],
-  providers: [    
+  providers: [
     RestaurantService
   ],
   bootstrap: [AppComponent]
@@ -118,7 +132,7 @@ import {
 
 // Class
 export class AppModule {
-  constructor (){
+  constructor() {
     console.log("Bootstrapping App!");
   }
 }

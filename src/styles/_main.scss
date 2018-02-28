@@ -13,30 +13,22 @@
 
 // Fonts //
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Roboto');
-
 // Basics //
 @import "basics";
-
 // Bootstrap //
 @import "bootstrap_components";
 @import "bootstrap_customize";
-
 // Others //
 // font awesome
 @import "../../node_modules/font-awesome/css/font-awesome.css";
-
 // owl carousel
 // @import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css";
 // @import "../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css";
-
 // animate css
 @import "../../node_modules/animate.css/animate.min.css";
-
 // leaflet map
 @import "../../node_modules/leaflet/dist/leaflet.css";
-
 // spinner loader
 @import "spinner";
-
 // Custom //
 @import "custom";

@@ -6,7 +6,10 @@
 */
 
 // Basic imports
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform
+} from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -25,7 +28,7 @@ export class OrderPipe implements PipeTransform {
     direction: string
   ): any[] {
 
-    if (items && field){
+    if (items && field) {
       this.list = _.sortBy(items, field);
 
       if (!direction) {

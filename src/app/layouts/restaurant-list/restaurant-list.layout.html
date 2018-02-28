@@ -1,4 +1,4 @@
-<div id="{{ id }}" class="{{ id }}">  
+<div id="{{ id }}" class="{{ id }}">
   <h1>Restaurantes</h1>
 
   <br>
@@ -6,48 +6,48 @@
 
   <p>
     Original: {{ restaurants.length }}
-    <br>
-    Piped: {{ restaurantsPiped.length }}
+    <br> Piped: {{ restaurantsPiped.length }}
   </p>
 
   <br>
-  <h2>Filtros</h2>  
+  <h2>Filtros</h2>
 
   <div class="filter-zone">
     <div class="switch-button-radio">
-      <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>            
-      
-      <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>   
-    </div> 
+      <switch-component (action)="setSwitch($event)" [checked]="switchOn"></switch-component>
+
+      <buttons-radio-component (action)="setFilter($event)" [options]="filters" [active]="activeFilter"></buttons-radio-component>
+    </div>
 
     <dropdown-component (action)="setPageSize($event)" [options]="pageSizes" [active]="pageSize"></dropdown-component>
-  </div>  
+  </div>
 
   <h2>Lista de restaurantes</h2>
-  
+
   <h3>Leaflet map</h3>
-  
+
   <map-component [restaurants]="restaurantsPiped"></map-component>
 
   <br>
   <h3>Modo tabla</h3>
 
   <div class="pagination-component-content">
-    <pagination-component (output)="setPage($event)" [length]="restaurantsLength" [pageSize]="pageSize.value" [maxSize]="maxPages" [initPage]="currentPage"></pagination-component>
+    <pagination-component (output)="setPage($event)" [length]="restaurantsLength" [pageSize]="pageSize.value" [maxSize]="maxPages"
+      [initPage]="currentPage"></pagination-component>
   </div>
 
-  <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>        
-  
+  <restaurant-table-component [restaurants]="restaurantsPiped" [fields]="tableFields"></restaurant-table-component>
+
   <h3>Modo acordeón</h3>
 
   <div class="filter-zone filter-zone_2">
     <dropdown-component (action)="setOrder($event)" [options]="orders" [active]="order"></dropdown-component>
   </div>
-  
-  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component> 
+
+  <restaurant-accordion-component [restaurants]="restaurantsPiped" [order]="order"></restaurant-accordion-component>
 
   <br>
   <h3>Modo tabs</h3>
 
-  <tab-component></tab-component>   
+  <tab-component></tab-component>
 </div>

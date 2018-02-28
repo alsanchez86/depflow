@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import {
+  Component
+} from '@angular/core';
 
 @Component({
-    selector: 'app-sidebar-layout',
-    templateUrl: './sidebar.layout.html',
-    styleUrls: ['./sidebar.layout.scss']
+  selector: 'app-sidebar-layout',
+  templateUrl: './sidebar.layout.html',
+  styleUrls: ['./sidebar.layout.scss']
 })
 
 export class SidebarLayout {
-    constructor() { 
+  constructor() {
 
-    }   
+  }
 }

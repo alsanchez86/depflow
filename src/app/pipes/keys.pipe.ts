@@ -2,7 +2,7 @@
   Recorre un array de objetos sobre sus propiedades y valores.
 
   Echar un vistazo a esta forma:
-    
+
     <div ng-repeat="user in users">
       <h1>Name: {{user.name}}</h1>
       <h1>Age: {{user.age}}</h1>
@@ -11,14 +11,17 @@
 */
 
 // Basic imports
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform
+} from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
 
 @Pipe({
-    name: 'keys',
-    pure: false
+  name: 'keys',
+  pure: false
 })
 
 export class KeysPipe implements PipeTransform {
@@ -30,10 +33,13 @@ export class KeysPipe implements PipeTransform {
   ): any {
 
     this.keys = [];
-    this.item = item;    
+    this.item = item;
 
-    _.each (this.item, (value, key, list) => {
-      this.keys.push ({value: value, key: key});
+    _.each(this.item, (value, key, list) => {
+      this.keys.push({
+        value: value,
+        key: key
+      });
     });
 
     return this.keys;

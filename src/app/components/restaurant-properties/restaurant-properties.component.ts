@@ -1,5 +1,9 @@
 // Basics
-import { Component, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input
+} from '@angular/core';
 
 // Extra imports
 import * as _ from 'underscore';
@@ -20,12 +24,12 @@ export class RestaurantPropertiesComponent {
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 
-  public isArrayObject (value: any): boolean {
+  public isArrayObject(value: any): boolean {
     return _.isArray(value) || _.isObject(value);
   }
 }

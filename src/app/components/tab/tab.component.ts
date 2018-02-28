@@ -1,5 +1,8 @@
 // Basic imports
-import { Component, ElementRef } from '@angular/core';
+import {
+  Component,
+  ElementRef
+} from '@angular/core';
 
 // nexter
 let next = 0;
@@ -10,15 +13,15 @@ let next = 0;
   styleUrls: ['./tab.component.scss']
 })
 
-export class TabComponent {    
+export class TabComponent {
   public id: string;
 
   constructor(
     private elem: ElementRef
-  ){}
+  ) {}
 
-  ngOnInit(){
+  ngOnInit() {
     // id
-    this.id = this.elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = this.elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 }

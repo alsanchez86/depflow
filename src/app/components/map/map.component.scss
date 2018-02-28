@@ -1,7 +1,6 @@
 @import "../../../styles/basics";
-
 :host /deep/ {
-    .leaflet-map { 
-        height: 600px; 
-    }
+  .leaflet-map {
+    height: 600px;
+  }
 }

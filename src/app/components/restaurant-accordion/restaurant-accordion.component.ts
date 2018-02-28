@@ -1,8 +1,14 @@
 // Basics
-import { Component, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input
+} from '@angular/core';
 
 // Classes
-import { Restaurant } from '../../classes';
+import {
+  Restaurant
+} from '../../classes';
 
 // nexter
 let next = 0;
@@ -15,14 +21,14 @@ let next = 0;
 
 export class RestaurantAccordionComponent {
   @Input() restaurants: Restaurant[];
-  @Input() order: object;  
+  @Input() order: object;
 
   public id: string;
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 }

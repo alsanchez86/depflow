@@ -1,39 +1,39 @@
-<div id="{{ id }}" class="{{ id }}">     
-    <table class="table table-striped">
-        <thead>
-            <!-- field -->
-            <tr>
-                <th>#</th>
+<div id="{{ id }}" class="{{ id }}">
+  <table class="table table-striped">
+    <thead>
+      <!-- field -->
+      <tr>
+        <th>#</th>
 
-                <th *ngFor="let field of fields; let i = index;">       
-                    <a href="#" *ngIf="field.orderly; else elseBlock" (click)="setOrder($event, field)">
-                        {{ field.name }}                                            
-                        
-                        <i *ngIf="(field.name == activeOrder.name) && !activeOrder.order" class="fa fa-sort-down" aria-hidden="true"></i>
-                        <i *ngIf="(field.name == activeOrder.name) && activeOrder.order" class="fa fa-sort-up" aria-hidden="true"></i>
-                        <i *ngIf="field.name != activeOrder.name" class="fa fa-sort" aria-hidden="true"></i>
-                    </a>
+        <th *ngFor="let field of fields; let i = index;">
+          <a href="#" *ngIf="field.orderly; else elseBlock" (click)="setOrder($event, field)">
+            {{ field.name }}
 
-                    <ng-template #elseBlock>
-                        {{ field.name }}
-                    </ng-template>
-                </th>
-            </tr>
-            <!-- / field -->
-        </thead>
+            <i *ngIf="(field.name == activeOrder.name) && !activeOrder.order" class="fa fa-sort-down" aria-hidden="true"></i>
+            <i *ngIf="(field.name == activeOrder.name) && activeOrder.order" class="fa fa-sort-up" aria-hidden="true"></i>
+            <i *ngIf="field.name != activeOrder.name" class="fa fa-sort" aria-hidden="true"></i>
+          </a>
 
-        <tbody>
-            <!-- restaurant -->            
-            <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order; let i = index;">
-                <td scope="row">
-                    {{ i + 1 }}
-                </td>
+          <ng-template #elseBlock>
+            {{ field.name }}
+          </ng-template>
+        </th>
+      </tr>
+      <!-- / field -->
+    </thead>
 
-                <td *ngFor="let field of fields">
-                    {{ getRestaurantFieldValue (restaurant, field.name) }}
-                </td>
-            </tr>
-            <!-- / restaurant -->
-        </tbody>   
-    </table>
+    <tbody>
+      <!-- restaurant -->
+      <tr *ngFor="let restaurant of restaurants | order:activeOrder.name:activeOrder.order; let i = index;">
+        <td scope="row">
+          {{ i + 1 }}
+        </td>
+
+        <td *ngFor="let field of fields">
+          {{ getRestaurantFieldValue (restaurant, field.name) }}
+        </td>
+      </tr>
+      <!-- / restaurant -->
+    </tbody>
+  </table>
 </div>

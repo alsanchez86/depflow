@@ -1,11 +1,9 @@
 @import "../../../styles/basics";
-
 :host /deep/ {
   .dropdown-toggle {
-      @include btn();
-
-      &:after {
-        display: none;
-      }
+    @include btn();
+    &:after {
+      display: none;
+    }
   }
 }

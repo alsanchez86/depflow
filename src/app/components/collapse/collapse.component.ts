@@ -1,5 +1,9 @@
 // Basic imports
-import { Component, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input
+} from '@angular/core';
 
 // nexter
 let next = 0;
@@ -19,16 +23,16 @@ export class CollapseComponent {
 
   constructor(
     private elem: ElementRef
-  ){
+  ) {
     // id
-    this.id = elem.nativeElement.tagName.toLowerCase() + "-" +  next++;
+    this.id = elem.nativeElement.tagName.toLowerCase() + "-" + next++;
   }
 
-  ngOnInit(){
-    if (! this.collapsed) this.collapsed = true;
+  ngOnInit() {
+    if (!this.collapsed) this.collapsed = true;
   }
 
-  public toggle () {
-    this.collapsed = ! this.collapsed;
+  public toggle() {
+    this.collapsed = !this.collapsed;
   }
 }
