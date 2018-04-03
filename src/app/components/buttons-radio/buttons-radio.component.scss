@@ -2,5 +2,9 @@
 :host /deep/ {
   label {
     margin-bottom: 0;
+
+    input[type="radio"] {
+      display: none;
+    }
   }
 }
